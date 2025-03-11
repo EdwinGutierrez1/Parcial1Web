@@ -3,20 +3,16 @@
     position: sticky;
 }
 
-.brand-container {
-    display: flex;
-    align-items: center;
-    gap: 0px; /* Espacio entre el logo y el nombre */
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .LogoNavbar {
-    width: 17%;
-    padding-left: 0px;
-}
-
-.NombreNavbar {
-    margin-left: 0px;
-    width: 17%;
+    padding: 10px;
+    margin:0px;
+    width: 30%;
+    display: block; /* Para eliminar espacio extra debajo de la imagen */
 }
 
 .dropdown-menu .dropdown-item:hover,
@@ -34,6 +30,24 @@
 .navbar-nav{
     gap:25px;
 }
+
+
+.search-button {
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    padding-left: 5px;
+  }
+  
+  .search-button .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    color: white;
+  }
+
 
 .navbar .nav-link{
     font-size: 18px;
