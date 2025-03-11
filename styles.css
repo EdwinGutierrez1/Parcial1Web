@@ -1,0 +1,59 @@
+.container-navbar{
+    background-color: #003786 ;   
+    position: sticky;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 0px; /* Espacio entre el logo y el nombre */
+}
+
+.LogoNavbar {
+    width: 17%;
+    padding-left: 0px;
+}
+
+.NombreNavbar {
+    margin-left: 0px;
+    width: 17%;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:active {
+    background-color: transparent !important;
+    color: #003786;
+    font-weight: 600;
+}
+
+.navbar .nav-item:hover > .nav-link {
+    text-decoration: underline; /* Subrayado */
+}
+
+.navbar-nav{
+    gap:25px;
+}
+
+.navbar .nav-link{
+    font-size: 18px;
+    color: white !important; /* Hace que el texto sea blanco siempre */
+}
+
+.dropdown-menu-columns {
+    width: 400px; /* Ajusta el ancho según tus necesidades */
+}
+.dropdown-menu-columns .dropdown-item {
+    width: 50%; /* Cada columna ocupa el 50% del ancho */
+    float: left; /* Coloca los elementos en columnas */
+}
+
+.dropdown-menu-columns .dropdown-header,
+.dropdown-menu-columns .dropdown-divider {
+    width: 100%; /* Los encabezados y divisores ocupan todo el ancho */
+    clear: both; /* Asegura que no se superpongan con los elementos flotantes */
+}
+
+.dropdown-header{
+    font-size: 16px;
+}
