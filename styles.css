@@ -5,7 +5,6 @@
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
     background-color: var(--color-primario);
     color: white;
     margin: 0;
@@ -21,6 +20,134 @@ body{
 }
 
 
-/* .container-galeria{
+/*Estilos del Navbar */
+
+.navbar{
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    background-color: var(--color-secundario);
+}
+
+/* Ajusta el ancho del contenedor de Bootstrap en pantallas grandes */
+@media (min-width: 1200px) {
+    .navbar .container {
+      max-width: 90%; /* En lugar del valor predeterminado de Bootstrap */
+    }
+}
+
+@media (min-width: 1600px) {
+    .navbar .container {
+    max-width: 85%;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+    margin-left: 0px;
+    }
     
-} */
+    .navbar-nav {
+    margin-right: 0px;
+    }
+}
+
+.navbar .navbar-brand .navbar-logo{
+    max-height: 65px;
+}
+
+.navbar .navbar-brand .navbar-titulo{
+    max-height: 50px;
+}
+
+
+.navbar .nav-link{
+    font-size:22px;
+    margin-left:30px;
+    position: relative;
+    color:white;
+}
+
+
+/* Quitamos todos los efectos de hover y focus que Bootstrap aplica por defecto a los links de navegación (nav-link).  */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: white !important; /*Al pasar el cursor, el color debe seguir siendo blanco*/
+    background-color: transparent !important; /*Se Elimina cualquier fondo */
+    box-shadow: none !important; /*Se eliminan las sombras */
+    outline: none !important; /*Se eliminan los contornos*/
+    text-decoration: none !important; /*Quitamos el subrayado del texto*/
+    opacity: 1 !important; /*Hacemos que la opacidad sea completa.*/
+}
+
+
+.navbar .nav-link.active{
+    color:white;
+    font-weight: 600;
+}
+
+.navbar .nav-link::before{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width:0%;
+    height: 2px;
+    background-color: white;
+    box-shadow: 0px 0px 0px white;
+    transition: all .6s ease;
+    transform-origin: center; 
+}
+
+.navbar .nav-item:hover .nav-link::before{
+    width:80%;
+}
+
+
+
+.navbar .navbar-toggler{
+    border:none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+.navbar .toggle-btn{
+    cursor:pointer;
+    position:relative;
+    top:5px;
+    z-index:1100;
+}
+
+.navbar .toggle-btn .bar{
+    width:25px;
+    height: 3px;
+    margin: 7px 0 7px auto;
+    transition: all .2s ease-in-out;
+    background-color: white;
+}
+
+.navbar .toggle-btn .bar:nth-child(2){
+    width:35px;
+}
+
+.navbar #toggle-menu{
+    display: none;
+}
+
+.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(2){
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(1){
+    transform: translateY(12px) rotate(45deg);
+}
+
+.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
