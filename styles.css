@@ -1,471 +1,613 @@
-:root{
-    --color-secundario: #1e521a;
-    --color-primario: #ede8d0;
-    --color-footer: #002300;
+:root {
+  --color-secundario: #1e521a;
+  --color-primario: #ede8d0;
+  --color-footer: #002300;
+  --color-form: rgba(255, 255, 255, 0.4);
 }
 
-body, html{
-    font-family: 'Rubik', 'Libre Franklin' !important;
-    background-color: var(--color-primario);
-    color: white;
-    margin: 0;
-    padding: 0;
+body,
+html {
+  font-family: "Rubik", "Libre Franklin" !important;
+  background-color: var(--color-primario);
+  color: white;
+  margin: 0;
+  padding: 0;
 }
 
 .carousel-seccion {
-    background-color: var(--color-primario);
-    padding: 1px; /* Necesario para contener los márgenes internos */
+  background-color: var(--color-primario);
+  padding: 1px; /* Necesario para contener los márgenes internos */
 }
 
-.titulo{
-    text-align: center;
-    font-size: 2rem;
-    margin: 1rem;
-    padding: 10px;
-    background-color: var(--color-secundario);
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 10px;
+  background-color: var(--color-secundario);
 }
-
 
 /*Estilos del Navbar */
 
-.navbar{
-    position:absolute;
-    width:100%;
-    top:0;
-    left:0;
-    background-color: var(--color-secundario);
+.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-secundario);
 }
 
 /* Ajusta el ancho del contenedor de Bootstrap en pantallas grandes */
 @media (min-width: 1200px) {
-    .navbar .container {
-      max-width: 90%; /* En lugar del valor predeterminado de Bootstrap */
-    }
+  .navbar .container {
+    max-width: 90%; /* En lugar del valor predeterminado de Bootstrap */
+  }
 }
 
 @media (min-width: 1600px) {
-    .navbar .container {
+  .navbar .container {
     max-width: 85%;
-    }
+  }
 }
 
 @media (min-width: 992px) {
-    .navbar-brand {
+  .navbar-brand {
     margin-left: 0px;
-    }
-    
-    .navbar-nav {
+  }
+
+  .navbar-nav {
     margin-right: 0px;
-    }
+  }
 }
 
-.navbar .navbar-brand .navbar-logo{
-    max-height: 65px;
+.navbar .navbar-brand .navbar-logo {
+  max-height: 65px;
 }
 
-.navbar .navbar-brand .navbar-titulo{
-    max-height: 50px;
+.navbar .navbar-brand .navbar-titulo {
+  max-height: 50px;
 }
 
-
-.navbar .nav-link{
-    font-size:22px;
-    margin-left:30px;
-    position: relative;
-    color:white;
+.navbar .nav-link {
+  font-size: 22px;
+  margin-left: 30px;
+  position: relative;
+  color: white;
 }
-
 
 /* Quitamos todos los efectos de hover y focus que Bootstrap aplica por defecto a los links de navegación (nav-link).  */
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-    color: white !important; /*Al pasar el cursor, el color debe seguir siendo blanco*/
-    background-color: transparent !important; /*Se Elimina cualquier fondo */
-    box-shadow: none !important; /*Se eliminan las sombras */
-    outline: none !important; /*Se eliminan los contornos*/
-    text-decoration: none !important; /*Quitamos el subrayado del texto*/
-    opacity: 1 !important; /*Hacemos que la opacidad sea completa.*/
+  color: white !important; /*Al pasar el cursor, el color debe seguir siendo blanco*/
+  background-color: transparent !important; /*Se Elimina cualquier fondo */
+  box-shadow: none !important; /*Se eliminan las sombras */
+  outline: none !important; /*Se eliminan los contornos*/
+  text-decoration: none !important; /*Quitamos el subrayado del texto*/
+  opacity: 1 !important; /*Hacemos que la opacidad sea completa.*/
 }
 
-
-.navbar .nav-link.active{
-    color:white;
-    font-weight: 600;
+.navbar .nav-link.active {
+  color: white;
+  font-weight: 600;
 }
 
-.navbar .nav-link::before{
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    width:0%;
-    height: 2px;
-    background-color: white;
-    box-shadow: 0px 0px 0px white;
-    transition: all .6s ease;
-    transform-origin: center; 
+.navbar .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  box-shadow: 0px 0px 0px white;
+  transition: all 0.6s ease;
+  transform-origin: center;
 }
 
-.navbar .nav-item:hover .nav-link::before{
-    width:80%;
+.navbar .nav-item:hover .nav-link::before {
+  width: 80%;
 }
 
-
-
-.navbar .navbar-toggler{
-    border:none !important;
-    outline: none !important;
-    box-shadow: none !important;
+.navbar .navbar-toggler {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.navbar .toggle-btn{
-    cursor:pointer;
-    position:relative;
-    top:5px;
-    z-index:1100;
+.navbar .toggle-btn {
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+  z-index: 1100;
 }
 
-.navbar .toggle-btn .bar{
-    width:25px;
-    height: 3px;
-    margin: 7px 0 7px auto;
-    transition: all .2s ease-in-out;
-    background-color: white;
+.navbar .toggle-btn .bar {
+  width: 25px;
+  height: 3px;
+  margin: 7px 0 7px auto;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
 }
 
-.navbar .toggle-btn .bar:nth-child(2){
-    width:35px;
+.navbar .toggle-btn .bar:nth-child(2) {
+  width: 35px;
 }
 
-.navbar #toggle-menu{
-    display: none;
+.navbar #toggle-menu {
+  display: none;
 }
 
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(2){
-    transform: translateX(50px);
-    opacity: 0;
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(2) {
+  transform: translateX(50px);
+  opacity: 0;
 }
 
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(1){
-    transform: translateY(12px) rotate(45deg);
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
 }
 
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(3){
-    transform: translateY(-8px) rotate(-45deg);
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /*Carrusel*/
 
-.bg-img-1{
-    background-image: url(Imagenes/cabaña1.jpeg);
-
+.bg-img-1 {
+  background-image: url(Imagenes/cabaña1.jpeg);
 }
 
-.bg-img-2{
-    background-image: url(Imagenes/cabaña2.jpg);
+.bg-img-2 {
+  background-image: url(Imagenes/cabaña2.jpg);
 }
 
-.bg-img-3{
-    background-image: url(Imagenes/pareja.jpg);
+.bg-img-3 {
+  background-image: url(Imagenes/pareja.jpg);
 }
 
-.bg-img-4{
-    background-image: url(Imagenes/desayuno.jpg);
+.bg-img-4 {
+  background-image: url(Imagenes/desayuno.jpg);
 }
-
 
 /* Estilos base */
 /* Estilos base */
 .carousel-container {
-    width: 95%;  /* Ancho proporcional consistente */
-    max-width: 1600px; /* Ancho máximo */
-    margin: 5vh auto 4vh; /* Márgenes proporcionales a la altura del viewport */
-    overflow: hidden;
-    border-radius: 10px;
-    /* Transición suave cuando cambian los tamaños */
-    transition: all 0.3s ease-in-out;
+  width: 95%; /* Ancho proporcional consistente */
+  max-width: 1600px; /* Ancho máximo */
+  margin: 5vh auto 4vh; /* Márgenes proporcionales a la altura del viewport */
+  overflow: hidden;
+  border-radius: 10px;
+  /* Transición suave cuando cambian los tamaños */
+  transition: all 0.3s ease-in-out;
 }
 
-
-
 .carousel-image {
-    height: 80vh; /* Altura proporcional al viewport */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  height: 80vh; /* Altura proporcional al viewport */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Pantallas medianas (tablets) */
 @media (max-width: 992px) {
-    .carousel-container {   
-        width: 95%; /* Mantenemos el mismo ancho para conservar los bordes laterales */
-        margin: 4vh auto 3vh;
-        border-radius: 8px;
-    }
-    
-    .carousel-image {
-        height: 70vh;
-    }
+  .carousel-container {
+    width: 95%; /* Mantenemos el mismo ancho para conservar los bordes laterales */
+    margin: 4vh auto 3vh;
+    border-radius: 8px;
+  }
+
+  .carousel-image {
+    height: 70vh;
+  }
 }
 
 /* Pantallas pequeñas (teléfonos en posición horizontal) */
 @media (max-width: 768px) {
-    .carousel-container {
-        width: 95%; /* Mantenemos el mismo ancho */
-        margin: 3vh auto 2vh;
-        border-radius: 5px;
-    }
-    
-    .carousel-image {
-        height: 60vh;
-    }
+  .carousel-container {
+    width: 95%; /* Mantenemos el mismo ancho */
+    margin: 3vh auto 2vh;
+    border-radius: 5px;
+  }
+
+  .carousel-image {
+    height: 60vh;
+  }
 }
 
 /* Teléfonos móviles (vista vertical) */
 @media (max-width: 576px) {
-    .carousel-container {
-        width: 100%;    /* Ancho completo */
-        max-width: none; /* Sin límite de ancho */
-        margin: 0;      /* Sin márgenes */
-        border-radius: 0; /* Sin bordes redondeados */
-    }
-    
-    .carousel-image {
-        height: calc(100vh - 56px); /* Altura completa menos la altura típica del navbar */
-        /* Alternativa: puedes ajustar este valor según la altura real de tu navbar */
-    }
+  .carousel-container {
+    width: 100%; /* Ancho completo */
+    max-width: none; /* Sin límite de ancho */
+    margin: 0; /* Sin márgenes */
+    border-radius: 0; /* Sin bordes redondeados */
+  }
+
+  .carousel-image {
+    height: calc(
+      100vh - 56px
+    ); /* Altura completa menos la altura típica del navbar */
+    /* Alternativa: puedes ajustar este valor según la altura real de tu navbar */
+  }
 }
 
-
 .content-box {
-    padding: 40px;
-    border-radius: 15px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  padding: 40px;
+  border-radius: 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .row {
-    align-items: center; /* Alinea verticalmente las columnas */
+  align-items: center; /* Alinea verticalmente las columnas */
 }
 
-.caja-conocenos, .caja-propietarios, .caja-cabaña {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.caja-conocenos,
+.caja-propietarios,
+.caja-cabaña {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .caja-propietarios img,
 .caja-cabaña img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
 .conocenos-seccion {
-    padding: 80px 0;
+  padding: 80px 0;
 }
 
 .titulo-conocenos {
-    font-size: 50px;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: -30px;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -30px;
 }
 
 .descripcion-conocenos {
-    text-align: justify;
-    font-size: 22px;
-    width: 100%;
-    max-width: 100%;
-    padding: 15px;
+  text-align: justify;
+  font-size: 22px;
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
 }
 
 .descripcion-2 {
-    text-align: justify;
-    font-size: 25px;
-    width: 100%;
-    max-width: 100%;
-    padding: 15px;
+  text-align: justify;
+  font-size: 25px;
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
 }
 
-.caja-conocenos:hover, 
-.caja-conocenos2:hover, 
-.caja-cabaña:hover, 
+.caja-conocenos:hover,
+.caja-conocenos2:hover,
+.caja-cabaña:hover,
 .caja-propietarios:hover {
-    transform: scale(1.03); /* Ejemplo: Aumenta ligeramente el tamaño */
-    transition: 0.3s ease-in-out; /* Hace que la transición sea suave */
+  transform: scale(1.03); /* Ejemplo: Aumenta ligeramente el tamaño */
+  transition: 0.3s ease-in-out; /* Hace que la transición sea suave */
 }
 
 /* ESTILOS GALERIA */
 
+/* Contenedor principal para las imágenes */
 .image-container {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Altura fija para todos los contenedores */
-    overflow: hidden;
-    margin-bottom: 2px;
-  }
-  
-  .image-container img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover; /* Hace que la imagen cubra todo el contenedor manteniendo proporciones */
-    transition: transform 0.3s ease;
-  }
-  
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    transition: 0.5s ease;
-  }
-  
-  .image-container:hover .overlay {
-    height: 100%;
-  }
-  
-  .image-container:hover img {
-    transform: scale(1.05);
-  }
-  
-  .text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 90%;
-  }
-  
-  /* Para mantener la distribución asimétrica pero con alturas fijas */
-  @media (min-width: 768px) {
-    .row.gallery {
-      display: flex;
-      align-items: stretch;
-    }
-  }
+  position: relative; /* Permite posicionar elementos hijos (como .overlay) de manera absoluta dentro de este contenedor */
+  width: 100%; /* El contenedor ocupa todo el ancho disponible */
+  height: 300px; /* Altura fija del contenedor */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde de los límites del contenedor */
+  margin-bottom: 2px; /* Añade un pequeño espacio debajo del contenedor */
+}
 
-  /* ESTILOS COTIZAR */
+/* Imágenes dentro del contenedor */
+.image-container img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: 100%; /* La imagen ocupa toda la altura del contenedor */
+  display: block; /* Elimina los espacios blancos alrededor de las imágenes */
+  object-fit: cover; /* Asegura que la imagen llene el contenedor sin distorsionarse */
+  transition: transform 0.3s ease; /* Aplica una transición suave al escalar la imagen */
+}
 
-  /* Cotizar */
+/* Superposición (overlay) que aparece al pasar el mouse */
+.overlay {
+  position: absolute; /* Se posiciona de manera absoluta dentro de .image-container */
+  bottom: 0; /* Comienza en la parte inferior del contenedor */
+  left: 0; /* Alinea al borde izquierdo del contenedor */
+  right: 0; /* Alinea al borde derecho del contenedor */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad del 70% */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde de los límites del overlay */
+  width: 100%; /* El overlay ocupa todo el ancho del contenedor */
+  height: 0; /* Inicialmente, no es visible */
+  transition: 0.5s ease; /* Transición suave para cambiar la altura del overlay */
+}
 
-/* Estilos para las tarjetas de servicio */
+/* Comportamiento al pasar el mouse sobre el contenedor de la imagen */
+.image-container:hover .overlay {
+  height: 100%; /* El overlay se expande para cubrir todo el contenedor */
+}
+
+/* Efecto de zoom en la imagen al pasar el mouse */
+.image-container:hover img {
+  transform: scale(1.05); /* Escala la imagen al 105% de su tamaño original */
+}
+
+/* Texto dentro de la superposición (overlay) */
+.text {
+  color: white; /* El texto es de color blanco */
+  font-size: 20px; /* Tamaño de fuente del texto */
+  position: absolute; /* El texto se posiciona dentro del contenedor del overlay */
+  top: 50%; /* El texto se centra verticalmente */
+  left: 50%; /* El texto se centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste preciso para centrar el texto */
+  text-align: center; /* Centra el texto dentro de su área */
+  width: 90%; /* Limita el ancho del texto al 90% del overlay */
+}
+
+/* Estilos responsivos para galerías en pantallas grandes */
+@media (min-width: 768px) {
+  .row.gallery {
+    display: flex; /* Cambia la disposición a flexbox para alinear los elementos en fila */
+    align-items: stretch; /* Asegura que todas las columnas tengan la misma altura */
+  }
+}
+
+
+/* ESTILOS COTIZAR */
+/* Estilo para el título de la sección de cotización */
+#tituloCotizar {
+  display: block; /* Asegura que el título sea visible como un elemento de bloque */
+}
+
+/* Tarjeta para cada servicio */
 .servicio-card {
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    height: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .servicio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .servicio-card.selected {
-    border-color: #28a745;
-    background-color: rgba(40, 167, 69, 0.05);
-  }
-  
-  .servicio-img-container {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .servicio-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .servicio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(40, 167, 69, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .servicio-card.selected .servicio-overlay {
-    opacity: 0.7;
-  }
-  
-  .servicio-check {
-    color: white;
-    font-size: 3rem;
-    display: none;
-  }
-  
-  .servicio-card.selected .servicio-check {
-    display: block;
-  }
-  
-  .servicio-info {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  .servicio-precio {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #28a745;
-    margin-top: 10px;
-  }
-  
-  .personas-selector {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .precio-persona {
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-  
-  #cantidad-personas {
-    font-weight: bold;
-  }
-  
-  .total-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  #continuar-btn {
-    margin-top: 15px;
-    padding: 10px 30px;
-  }
-  
-  .btn-secundario {
-    background-color: var(--color-secundario) !important;
-    color: white !important;
-  }
+  border: 2px solid #ddd; /* Bordes grises ligeros alrededor de la tarjeta */
+  border-radius: 10px; /* Bordes redondeados para darle un diseño moderno */
+  overflow: hidden; /* Oculta el contenido que se desborde del contenedor */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse sobre la tarjeta */
+  transition: all 0.3s ease; /* Transición suave en transformaciones y sombras */
+  height: 355px; /* Altura fija de la tarjeta */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.servicio-card:hover {
+  transform: translateY(-5px); /* Desplaza la tarjeta ligeramente hacia arriba */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Aumenta la intensidad de la sombra */
+}
+
+/* Estilo para tarjetas seleccionadas */
+.servicio-card.selected {
+  border-color: #28a745; /* Cambia el color del borde a verde */
+  background-color: rgba(40, 167, 69, 0.05); /* Fondo con verde claro y opacidad */
+}
+
+/* Contenedor de la imagen dentro de cada tarjeta */
+.servicio-img-container {
+  position: relative; /* Establece la posición relativa para posicionar el overlay */
+  height: 200px; /* Altura fija del contenedor de la imagen */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+/* Estilo para las imágenes dentro del contenedor */
+.servicio-img-container img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: 100%; /* La imagen ocupa toda la altura del contenedor */
+  object-fit: cover; /* Asegura que la imagen se ajuste perfectamente sin distorsión */
+}
+
+/* Superposición (overlay) que aparece sobre la imagen */
+.servicio-overlay {
+  position: absolute; /* Posiciona el overlay dentro de .servicio-img-container */
+  top: 0; /* Comienza en la parte superior del contenedor */
+  left: 0; /* Comienza en el borde izquierdo del contenedor */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Ocupa toda la altura del contenedor */
+  background-color: rgba(40, 167, 69, 0.7); /* Fondo verde semi-transparente */
+  display: flex; /* Usa flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido dentro del overlay */
+  align-items: center; /* Centra verticalmente el contenido dentro del overlay */
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease; /* Transición suave al cambiar la opacidad */
+}
+
+/* Superposición visible cuando la tarjeta está seleccionada */
+.servicio-card.selected .servicio-overlay {
+  opacity: 0.7; /* Ajusta la visibilidad del overlay */
+}
+
+/* Icono de verificación dentro de la superposición */
+.servicio-check {
+  color: white; /* Color blanco para destacar el ícono sobre el fondo verde */
+  font-size: 3rem; /* Tamaño grande para que el ícono sea visible claramente */
+  display: none; /* Inicialmente invisible */
+}
+
+/* Muestra el ícono de verificación cuando la tarjeta está seleccionada */
+.servicio-card.selected .servicio-check {
+  display: block; /* Hace visible el ícono */
+}
+
+/* Información del servicio (texto debajo de la imagen) */
+.servicio-info {
+  background-color: white; /* Fondo blanco para resaltar el texto */
+  padding: 15px; /* Espaciado interno alrededor del texto */
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Estilo para el precio dentro de la información del servicio */
+.servicio-precio {
+  font-weight: bold; /* Hace que el texto del precio sea más destacado */
+  font-size: 1.2rem; /* Tamaño ligeramente más grande para mayor visibilidad */
+  color: #28a745; /* Usa color verde para enfatizar */
+  margin-top: 10px; /* Espaciado superior entre el precio y el texto anterior */
+}
+
+/* Contenedor para el selector de cantidad de personas */
+.personas-selector {
+  background-color: #f8f9fa; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+}
+
+/* Estilo para el texto del precio por persona */
+.precio-persona {
+  font-size: 1.1rem; /* Tamaño de fuente más grande */
+  font-weight: 500; /* Peso medio para resaltar el texto */
+}
+
+/* Estilo para el input de cantidad de personas */
+#cantidad-personas {
+  font-weight: bold; /* Hace que el texto sea más destacado */
+}
+
+/* Sección para mostrar el total estimado */
+.total-section {
+  margin-top: 30px; /* Espaciado superior para separar de la sección anterior */
+  padding: 20px; /* Espaciado interno para mantener contenido separado del borde */
+  background-color: #f8f9fa; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+}
+
+/* Botón para continuar con la cotización */
+#continuar-btn {
+  margin-top: 15px; /* Espaciado superior para separación */
+  padding: 10px 30px; /* Tamaño del botón */
+}
+
+/* Estilo para los botones secundarios */
+.btn-secundario {
+  background-color: var(--color-secundario) !important; /* Usa una variable CSS para el color */
+  color: white !important; /* Texto blanco */
+}
+
+/* Oculta el formulario cuando tiene la clase .hidden */
+.formulario-section.hidden {
+  display: none; /* Hace que el formulario sea invisible */
+}
+
+
+/* FOOTER */
+/* Estilos generales para la sección de contacto */
+#Contacto {
+  background-color: black; /* Fondo negro para resaltar la sección */
+  color: white; /* Texto en blanco para mejor visibilidad */
+  margin-top: 60px; /* Espaciado superior para separar la sección de otras */
+}
+
+/* Estilo para las columnas dentro de la sección de contacto */
+#Contacto .col-md-4 {
+  padding-top: 20px; /* Espaciado interno superior para dar aire al contenido */
+  display: flex; /* Flexbox para organizar los elementos dentro de la columna */
+  flex-direction: column; /* Los elementos se colocan en una columna vertical */
+  align-items: center; /* Centra los elementos horizontalmente */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+/* Títulos de los bloques de la sección de contacto */
+#Contacto h5 {
+  margin-top: 0; /* Elimina cualquier margen superior */
+  margin-bottom: 20px; /* Espaciado inferior para separar del contenido siguiente */
+  font-size: 18px; /* Tamaño de fuente para los títulos */
+  position: relative; /* Posiciona el elemento de manera relativa para usar pseudo-elementos */
+  padding-bottom: 10px; /* Espaciado inferior interno */
+  text-align: center; /* Centra el texto del título */
+}
+
+/* Línea decorativa bajo los títulos */
+#Contacto h5::after {
+  content: ''; /* Crea un elemento visual vacío */
+  position: absolute; /* Posiciona la línea en relación al título */
+  bottom: 0; /* Coloca la línea justo en la parte inferior del título */
+  left: 50%; /* Comienza desde la mitad del ancho del título */
+  transform: translateX(-50%); /* Centra la línea horizontalmente */
+  width: 50px; /* Ancho de la línea decorativa */
+  height: 2px; /* Altura de la línea decorativa */
+  background-color: var(--color-secundario); /* Usa la variable para el color secundario */
+}
+
+/* Contenedor para el logo y nombre */
+.logoYNombre {
+  display: flex; /* Flexbox para organizar los elementos */
+  flex-direction: row; /* Organiza los elementos en una fila */
+  align-items: center; /* Alinea verticalmente los elementos */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Imagen del primer logo dentro del contenedor */
+.logoYNombre img:first-child {
+  max-height: 80px; /* Altura máxima para mantener proporciones */
+  margin-right: 0; /* Sin margen derecho */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Imagen del último logo dentro del contenedor */
+.logoYNombre img:last-child {
+  max-height: 80px; /* Altura máxima igual que el primer logo */
+  margin-right: 0; /* Sin margen derecho */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Contenedor para las redes sociales */
+.redes-sociales {
+  display: flex; /* Flexbox para organizar elementos */
+  flex-direction: column; /* Los elementos están en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  width: 100%; /* Ancho completo del contenedor */
+}
+
+/* Contenedor de los íconos sociales */
+.social-icons {
+  display: flex; /* Flexbox para organizar íconos en fila */
+  justify-content: center; /* Centra los íconos horizontalmente */
+  gap: 15px; /* Espaciado entre los íconos */
+}
+
+/* Estilo general para cada ícono social */
+.social-icon {
+  color: var(--color-secundario); /* Color inicial de los íconos */
+  font-size: 30px; /* Tamaño grande para visibilidad */
+}
+
+/* Cambio de color al pasar el mouse sobre los íconos */
+.social-icon:hover {
+  color: white; /* Cambia a blanco al hacer hover */
+}
+
+/* Contenedor para la información de contacto */
+.contact-info {
+  padding-left: 0; /* Elimina el padding izquierdo por defecto */
+  list-style-type: none; /* Elimina los puntos o marcadores de la lista */
+}
+
+/* Elementos individuales de la información de contacto */
+.contact-info li {
+  display: flex; /* Flexbox para organizar íconos y texto */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente */
+  margin-bottom: 10px; /* Espaciado inferior entre elementos */
+  text-align: center; /* Centra el texto dentro de cada elemento */
+}
+
+/* Contenedor para el mapa */
+.map-container {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  display: flex; /* Flexbox para organizar elementos */
+  justify-content: center; /* Centra el mapa horizontalmente */
+}
+
+/* Estilo para la sección de copyright centrada */
+.d-flex.flex-column.flex-sm-row {
+  justify-content: center !important; /* Asegura que el contenido esté centrado */
+  text-align: center; /* Alinea el texto al centro */
+}

@@ -1,31 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona el logo de la barra de navegación
     const navbarLogo = document.querySelector('.navbar-logo');
     
     if (navbarLogo) {
-    const originalSrc = navbarLogo.src;
-    const hoverSrc = 'Imagenes/LogoAlternativo.png'; 
-    const brandElement = navbarLogo.parentElement;
+        // Guarda la fuente original del logo
+        const originalSrc = navbarLogo.src;
+        // Define la fuente del logo alternativo para el hover
+        const hoverSrc = 'Imagenes/LogoAlternativo.png'; 
+        // Obtiene el elemento padre del logo
+        const brandElement = navbarLogo.parentElement;
 
-    if (brandElement) {
-        brandElement.addEventListener('mouseenter', function() {
-        navbarLogo.src = hoverSrc;
-        });
-        
-        brandElement.addEventListener('mouseleave', function() {
-        navbarLogo.src = originalSrc;
-        });
-    }
+        if (brandElement) {
+            // Cambia la fuente del logo al pasar el mouse sobre el elemento padre
+            brandElement.addEventListener('mouseenter', function() {
+                navbarLogo.src = hoverSrc;
+            });
+            
+            // Restaura la fuente original del logo al quitar el mouse del elemento padre
+            brandElement.addEventListener('mouseleave', function() {
+                navbarLogo.src = originalSrc;
+            });
+        }
     }
 });
 
+// Creamos el evento para el botón de cotizar
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleccionar elementos (código existente)
+    // Constantes para los elementos de la página
     const servicioCards = document.querySelectorAll('.servicio-card');
     const totalPreview = document.getElementById('total-preview');
     const totalFinal = document.getElementById('total-final');
     const continuarBtn = document.getElementById('continuar-btn');
     const serviciosSection = document.querySelector('.servicios-section');
     const formularioSection = document.querySelector('.formulario-section');
+    const formularioTitulo = document.getElementById('tituloCotizar');
     const resumenReserva = document.getElementById('resumen-reserva');
     const cantidadPersonas = document.getElementById('cantidad-personas');
     const cantidadPersonasResumen = document.getElementById('cantidad-personas-resumen');
@@ -45,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return numero.toLocaleString('es-CL');
     }
     
+    // Objeto para rastrear los servicios activos
     let serviciosActivos = {
         'servicio1': false,
         'servicio2': false,
@@ -62,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             calcularTotal();
         }
     });
-    
+    // Evento para aumentar
     incrementarBtn.addEventListener('click', function() {
         if (parseInt(cantidadPersonas.value) < 10) {
             cantidadPersonas.value = parseInt(cantidadPersonas.value) + 1;
@@ -70,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             calcularTotal();
         }
     });
-    
+    // Eevento para cambiar la cantidad de personas
     cantidadPersonas.addEventListener('input', function() {
         // Asegurar que esté entre 1 y 10
         if (parseInt(this.value) < 1) this.value = 1;
@@ -156,11 +165,16 @@ document.addEventListener('DOMContentLoaded', function() {
             resumenReserva.appendChild(li);
         }
     }
+
+    // Ocultar la sección del formulario inicialmente
+    formularioSection.classList.add('hidden');
     
     // Evento para el botón de continuar
     continuarBtn.addEventListener('click', function() {
+        // Ocultar la sección de servicios y mostrar la sección del formulario
         serviciosSection.style.display = 'none';
         formularioSection.style.display = 'block';
+        formularioTitulo.style.display = 'none';
         
         // Transferir el número de personas al formulario
         document.getElementById('personas').value = cantidadPersonas.value;
@@ -170,11 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. Crear el botón si no existe
     let volverBtn = document.getElementById('volver-btn');
     if (!volverBtn) {
-        volverBtn = document.createElement('button');
-        volverBtn.id = 'volver-btn';
-        volverBtn.className = 'btn btn-secondary'; // Puedes ajustar la clase según tu diseño
-        volverBtn.textContent = 'Volver a servicios';
-        
         // Insertar el botón al inicio del formulario (puedes ajustar la ubicación)
         const formularioHeader = formularioSection.querySelector('h2') || formularioSection.firstChild;
         formularioSection.insertBefore(volverBtn, formularioHeader);
@@ -182,7 +191,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 2. Añadir el evento al botón para volver a la sección de servicios
     volverBtn.addEventListener('click', function() {
+        // Ocultar la sección del formulario y mostrar la sección de servicios
         formularioSection.style.display = 'none';
         serviciosSection.style.display = 'block';
+        formularioTitulo.style.display = 'block';
     });
 });
