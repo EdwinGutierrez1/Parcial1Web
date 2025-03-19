@@ -136,8 +136,6 @@ body, html{
   width:80%;
 }
 
-
-
 .navbar .navbar-toggler{
   border:none !important;
   outline: none !important;
@@ -251,7 +249,6 @@ background-color: white !important;
 border: 2px solid var(--color-footer) !important;
 color: var(--color-footer) !important;
 transform: scale(1.06); 
-
 }
 
 /* Mejora la legibilidad del texto */
@@ -554,6 +551,11 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 #continuar-btn {
   margin-top: 15px; /* Espaciado superior para separación */
   padding: 10px 30px; /* Tamaño del botón */
+  transition: transform 0.3s ease;
+}
+
+#continuar-btn:hover{
+  transform: scale(1.06);
 }
 
 /* Estilo para los botones secundarios */
@@ -852,8 +854,8 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
   font-size: 30px; /* Tamaño grande para visibilidad */
 }
 
-span{
-  margin-left:10px; /*Se le pone un margen a la izquierda de 10 px a los elementos marcados con "span", en este caso, los iconos de la parte de "contactanos"*/
+.horario-contactanos, .telefono-contactanos, .email-contactanos, .direccion-contactanos{
+  margin-left:10px; /*Se le pone un margen a la izquierda de 10 px a los iconos de la parte de "contactanos"*/
 }
 
 /* Cambio de color al pasar el mouse sobre los íconos */
