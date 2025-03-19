@@ -27,10 +27,10 @@
 
   <!-- NavBar -->
   <section>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" id="secccionavbar">
       <div class="container">
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#secccionavbar">
           <img src="Imagenes/Logo.png" alt="Logo" class="navbar-logo">
           <img src="Imagenes/Nombre.png" alt="Título" class="navbar-titulo">
         </a>
@@ -51,7 +51,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <!--Link Inicio -->
             <li class="nav-item">
-              <a class="nav-link" href="#">Inicio</a>
+              <a class="nav-link" href="#secccionavbar">Inicio</a>
             </li>
             <!--Link Conocenos -->
             <li class="nav-item">
@@ -67,7 +67,7 @@
             </li>
             <!--Link Contacto-->
             <li class="nav-item">
-              <a class="nav-link" href="#Contacto">Contacto</a>
+              <a class="nav-link" href="#">Contacto</a>
             </li>
           </ul>
 
@@ -80,8 +80,6 @@
 
   <!--Carrusel -->
 
-
-
   <section class="carousel-seccion">
     <div class="carousel-container">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
@@ -89,15 +87,39 @@
         <div class="carousel-inner">
 
           <div class="carousel-item carousel-image bg-img-1 active">
+            <div class="carousel-caption">
+              <h2>Bienvenidos a Montaña Encantada, un refugio de paz y naturaleza</h2>
+              <a href="#Cotizar">
+                <button class="btn btn-primary">Reservar ahora</button>
+              </a>
+            </div>
           </div>
 
           <div class="carousel-item carousel-image bg-img-2">
+            <div class="carousel-caption">
+              <h2>Disfruta de habitaciones elegantes y cómodas en pleno corazón del bosque</h2>
+              <a href="#Cotizar">
+                <button class="btn btn-primary">Reservar ahora</button>
+              </a>
+            </div>
           </div>
 
           <div class="carousel-item carousel-image bg-img-3">
+            <div class="carousel-caption">
+              <h2>Escapa de la rutina y vive momentos inolvidables con tu pareja en un entorno único</h2>
+              <a href="#Cotizar">
+                <button class="btn btn-primary">Reservar ahora</button>
+              </a>
+            </div>
           </div>
 
           <div class="carousel-item carousel-image bg-img-4">
+            <div class="carousel-caption">
+              <h2>Comienza tu día con un desayuno gourmet rodeado de la serenidad de la naturaleza</h2>
+              <a href="#Cotizar">
+                <button class="btn btn-primary">Reservar ahora</button>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -166,7 +188,7 @@
   </section>
 
   <!-- Sección principal de la galería -->
-  <section id="Galeria">
+  <section id="Galeria" class="galeria-seccion">
     <!-- Contenedor principal con márgenes (estilizados con Bootstrap) -->
     <div class="container-galeria mt-4 mx-5 mb-5">
       <!-- Título centrado de la galería -->
@@ -260,7 +282,7 @@
   </section>
 
   <!-- Sección principal de la cotizacion -->
-  <section id="Cotizar">
+  <section id="Cotizar" class="cotizar-seccion">
     <!-- Contenedor principal con márgenes (estilizados con Bootstrap) -->
     <div class="container-cotizar mt-5 mx-5">
       <!-- Título centrado de la sección -->
@@ -269,7 +291,7 @@
       <!-- Sección de selección de servicios con imágenes -->
       <div class="servicios-section mb-5">
         <!-- Subtitulo para que el usuario pueda elegir que servicios quiere -->
-        <h3 class="text-center mb-4">Selecciona los servicios que deseas incluir</h3>
+        <h3 class="text-center mb-4 descripcion-cotizacion">Selecciona los servicios que deseas incluir</h3>
         <!-- Creacion de la fila para las tarjetas de los servicios -->
         <div class="row">
           <!-- Servicio de comidas, le damos el tamaño de pantalla y cuanto ocupa en la fila, en este caso 4 y margen en el final -->
@@ -353,13 +375,13 @@
         </div>
 
         <!-- Selector de cantidad de personas -->
-         <!-- Creacion del div para las personas, margen superior de 4, padding de 4 y un fondo claro redondeado -->
+        <!-- Creacion del div para las personas, margen superior de 4, padding de 4 y un fondo claro redondeado -->
         <div class="personas-selector mt-4 p-4 bg-light rounded">
           <!-- Titulo de la cantidad de personas -->
           <!-- Creacion de un h4 con un margen de 3 -->
           <h4 class="mb-3">¿Cuántas personas asistirán?</h4>
           <!-- Creacion de la fila para la cantidad de personas -->
-           <!-- items alinedos al centro y un margen del fondo de 3 -->
+          <!-- items alinedos al centro y un margen del fondo de 3 -->
           <div class="row align-items-center mb-3">
             <!-- Creacion de la columna, ocupa 6 espacios en la fila -->
             <div class="col-md-6">
@@ -382,7 +404,7 @@
             </div>
             <!-- Cerramos la fila -->
           </div>
-           <!-- Parrafo con informacion extra sobre la cotizacion -->
+          <!-- Parrafo con informacion extra sobre la cotizacion -->
           <p class="text-info mb-0"><small>Algunos servicios varían su precio según el número de personas</small></p>
           <!-- Cerramos el div de la cantidad de personas -->
         </div>
@@ -401,267 +423,214 @@
       </div>
 
       <!-- Formulario de información personal (inicialmente oculto) -->
+      <!-- Mantén toda la parte de selección de servicios igual -->
+
+      <!-- Reemplaza tu actual formulario-section con esto -->
       <div class="formulario-section">
-        <!-- Creacion de un contenedor con un margen superior de 4 y un margen inferior de 4 -->
         <div class="formulario-container">
-          <!-- Titulo del formulario-->
-            <h2 class="formulario-titulo" id="formularioTitulo">Cotiza tu experiencia</h2>
-            <!-- Subtitulo del formulario-->
-            <p class="formulario-subtitulo">Complete sus datos para finalizar la reserva</p>
-            <!-- Formulario con un id para poder enviar los datos -->
-            <form method="POST" id="cotizar-form">
-              <!-- Creacion de un grupo de formulario con un margen inferior de 3 -->
-              <div class="form-group">
-                <!-- Etiqueta para el input con el nombre -->
-                <label for="nombre">Nombre</label>
-                <!-- Icono de usuario -->
-                <i class="fas fa-user"></i>
-                <!-- Input para que el usuario escriba su nombre -->
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
-                <!-- Cierre del grupo -->
-              </div>
-              <!-- Creacion de un grupo de formulario -->
-              <div class="form-group">
-                <!-- Etiqueta para el input con el correo electronico -->
-                <label for="email">Correo electrónico</label>
-                <!-- Icono de correo electronico -->
-                <i class="fas fa-envelope"></i>
-                <!-- Input para que el usuario escriba su correo electronico -->
-                <input type="email" class="form-control" id="email" name="email" required>
-                <!-- Cierre del grupo -->
-              </div>
+          <h2 class="formulario-titulo">Cotiza tu experiencia</h2>
+          <p class="formulario-subtitulo">Complete sus datos para finalizar la reserva</p>
 
-              <!-- Creacion de un grupo de formulario -->
-              <div class="form-row">
-                <!-- Creacion de una columna con un tamaño de 6 -->
-                <div class="form-group col-md-6">
-                  <!-- Etiqueta para el input con el telefono -->
-                  <label for="telefono">Teléfono</label>
-                  <!-- Icono de telefono -->
-                  <i class="fas fa-phone"></i>
-                  <!-- Input para que el usuario escriba su telefono -->
-                  <input type="tel" class="form-control" id="telefono" name="telefono" required>
-                  <!-- Cierre del grupo -->
-                </div>
-
-                <!-- Creacion de una columna con un tamaño de 6 -->
-                <div class="form-group">
-                  <!-- Etiqueta para el input con la fecha de llegada -->
-                  <label for="fecha">Fecha de llegada</label>
-                  <!-- Icono de calendario -->
-                  <i class="fas fa-calendar"></i>
-                  <!-- Input para que el usuario seleccione la fecha de llegada -->
-                  <input type="date" class="form-control" id="fecha" name="fecha" required>
-                  <!-- Cierre del grupo -->
-                </div>
-                <!-- Cierre de la fila -->
-              </div>
-
-              <!-- Creacion de un grupo de formulario, como solo se le va a aplicar un estilo, lo hago desde la etiqueta HTML-->
-              <div class="form-group" style="max-width: 200px;">
-                <!-- Etiqueta para el input con el numero de personas -->
-                <label for="personas">Número de personas</label>
-                <!-- Icono de personas -->
-                <i class="fas fa-users"></i>
-                <!-- Input para que el usuario seleccione el numero de personas -->
-                <input type="number" class="form-control" id="personas" name="personas" required readonly>
-                <!-- Cierre del grupo -->
-              </div>
-
-              <!-- Creacion de un grupo de formulario -->
-              <div class="form-group">
-                <!-- Etiqueta para el input con los comentarios -->
-                <label for="comentarios">Comentarios</label>
-                <!-- Icono de comentarios -->
-                <i class="fas fa-comment"></i>
-                <!-- Input para que el usuario escriba sus comentarios -->
-                <textarea class="form-control" id="comentarios" name="comentarios" rows="3"></textarea>
-                <!-- Cierre del grupo -->
-              </div>
-
-              <!-- Mantén los campos ocultos para los servicios seleccionados -->
-              <input type="hidden" id="servicio1" name="servicios" value="0">
-              <input type="hidden" id="servicio2" name="servicios" value="0">
-              <input type="hidden" id="servicio3" name="servicios" value="0">
-              <input type="hidden" id="precio-base-input" name="precio-base" value="60000">
-
-              <!-- Creacion de un contenedor-->
-              <div class="resumen-container">
-                <!-- Titulo del resumen de la cotizacion-->
-                <h4>Resumen de tu reserva:</h4>
-                <!-- Lista para mostrar los servicios seleccionados -->
-                <ul id="resumen-reserva">
-                  <!-- Se llenará dinámicamente -->
-                </ul>
-                <!-- Parrafo con el total de la cotizacion -->
-                <h4 class="total-resumen">Total: $<span id="total-final">60000</span></h4>
-                <!-- Cierre del contenedor -->
-              </div>
-
-              <!-- Creacion de un contenedor con los botones, margen superior de 4 y un margen inferior de 4 -->
-              <div class="botones-container">
-                <!-- Boton para volver a los servicios -->
-                <button class="btn-volver" id="volver-btn">
-                  <!-- Este botón se agrega por si quiere realizar una cotizacion diferente -->
-                  <i class="fas fa-arrow-left"></i> Volver a los servicios
-                </button>
-                <!-- Boton para enviar la cotizacion -->
-                <button type="submit" class="btn-cotizar">
-                  <!-- Este boton se agrega para "enviar" la cotizacion -->
-                  <i class="fas fa-paper-plane"></i> Cotizar
-                </button>
-                <!-- Cierre del contenedor -->
-              </div>
-              <!-- Cierre del formulario -->
-            </form>
-
-            <!-- Creacion de divs con informacion que podria atraer a los clientes -->
-            <div class="caracteristicas">
-              <!-- Creacion de un div con una clase y un icono -->
-              <div class="caracteristica">
-                <!-- Icono de check -->
-                <i class="fas fa-check-circle"></i>
-                <span>Confirmación inmediata</span>
-              </div>
-              <!-- Creacion de un div con una clase y un icono -->
-              <div class="caracteristica">
-                <i class="fas fa-lock"></i>
-                <span>Pago seguro</span>
-              </div>
-              <!-- Creacion de un div con una clase y un icono -->
-              <div class="caracteristica">
-                <i class="fas fa-heart"></i>
-                <span>Satisfacción garantizada</span>
-              </div>
-              <!-- Cierre del div de caracteristicas-->
-            </div>
-            <!-- Cierre del contenedor formulario-container -->
-        </div>
-        <!-- Cierre del formulario-section -->
-      </div>
-      <!-- Cierre de la seccion cotizar -->
-  </section>
-
-  <!-- Creacion de la seccion de contactos/footer -->
-  <section id="Contacto">
-    <!-- Creacion de un contenedor para la informacion del footer-->
-    <div class="footer-container">
-      <!-- Creacion de un footer con un padding vertical de 5 -->
-      <footer class="py-5">
-        <!-- Creacion de la fila para los elementos-->
-        <div class="row">
-          <!-- Columna izquierda: Logo, nombre y redes sociales -->
-          <div class="col-md-4">
-            <!-- Título para esta sección -->
-            <h5>Nosotros</h5>
-            <!-- Div con el logo y el nombre de la empresa -->
-            <div class="logoYNombre">
-              <!-- Imagen del logo -->
-              <img src="Imagenes/Logo.png" alt="Logo de la empresa">
-              <!-- Imagen del nombre -->
-              <img src="Imagenes/Nombre.png" alt="Nombre de la empresa">
-              <!-- Cierre del div -->
+          <form method="POST" id="cotizar-form">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <i class="fas fa-user"></i>
+              <input type="text" class="form-control" id="nombre" name="nombre" required>
             </div>
 
-            <!-- Creacion de div para los iconos de las redes sociales -->
-            <div class="redes-sociales">
-              <!-- Parrafo con el texto de seguirnos -->
-              <p>Síguenos</p>
-              <!-- Iconos de las redes sociales -->
-              <div class="social-icons">
-                <!-- Icono de Facebook -->
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <!-- Icono de Instagram -->
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <!-- Icono de Twitter -->
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <!-- Icono de WhatsApp -->
-                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                <!-- Cierre del div de los iconos -->
-              </div>
-              <!-- Cierre del div de las redes sociales -->
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <i class="fas fa-envelope"></i>
+              <input type="email" class="form-control" id="email" name="email" required>
             </div>
-            <!-- Cierre de la columna izquierda -->
-          </div>
 
-          <!-- Columna central: Información de contacto -->
-           <!-- Le damos el tamaño a la columna, ademas de una clase de Bootstrap para centrar el texto -->
-          <div class="col-md-4 text-center">
-            <!-- Titulo para esta seccion -->
-            <h5>Contáctanos</h5>
-            <!-- Lista con la informacion de contacto, estilo de flex en columna, ademasd e una clae-->
-            <ul class="flex-column contact-info">
-              <!-- Elementos de la lista, margen de fondo de 2 -->
-              <li class="nav-item mb-2">
-                <!-- Icono de ubicacion -->
-                <i class="fas fa-map-marker-alt"></i>
-                <!-- Texto con la direccion -->
-                <span>Dirección: Km 3 vía Cúcuta</span>
-              </li>
-              <!-- Elementos de la lista, margen de fondo de 2-->
-              <li class="nav-item mb-2">
-                <!-- Icono de telefono -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
                 <i class="fas fa-phone"></i>
-                <!-- Texto con el telefono -->
-                <span>Teléfono: 300 987 6543</span>
-              </li>
-              <!-- Elementos de la lista, margen de fondo de 2 -->
-              <li class="nav-item mb-2">
-                <!-- Icono de correo electronico -->
-                <i class="fas fa-envelope"></i>
-                <!-- Texto con el correo electronico -->
-                <span>Email: MontañaEncantada@gmail.com</span>
-              </li>
-              <!-- Elementos de la lista, margen de fondo de 2 -->
-              <li class="nav-item mb-2">
-                <!-- Icono de reloj -->
-                <i class="fas fa-clock"></i>
-                <!-- Texto con el horario -->
-                <span>Horario: Lunes a Domingo 8am - 6pm</span>
-              </li>
-              <!-- Cierre de la lista -->
-            </ul>
-            <!-- Cierre de la columna central -->
-          </div>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+              </div>
 
-          <!-- Columna derecha: Mapa -->
-          <!-- Le damos el tamaño a la columna -->
-          <div class="col-md-4">
-            <!-- Titulo para esta seccion -->
-            <h5>Nuestra Ubicación</h5>
-            <!-- Contenedor del mapa -->
-            <div class="map-container">
-              <!-- Mapa de Google Maps -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53199.945795559695!2d-73.132978!3d7.11838125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e68157af751c0ed%3A0x75a0e4551148c36c!2sBucaramanga%2C%20Santander!5e1!3m2!1ses-419!2sco!4v1742333859578!5m2!1ses-419!2sco"
-                width="80%" height="230" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-              <!-- Cierre del contenedor del mapa -->
+              <div class="form-group">
+                <label for="fecha">Fecha de llegada</label>
+                <i class="fas fa-calendar"></i>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
+              </div>
             </div>
-            <!-- Cierre de la columna derecha -->
-          </div>
-          <!-- Cierre de la fila -->
-        </div>
-        
-        <!-- Div con la informacion de derechos de autor -->
-         <!-- d-flex: para darle un display flex, le damos estilo de columna, y justifica el contenido con espacio entre ellos
-          da un padding vertical de 4 y un margen vetical de 4 y por ultimo un borde superior -->
-         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <!-- Parrafo con la informacion de derechos de autor -->
-          <p>&copy; 2024 Montaña Encantada. Todos los derechos reservados.</p>
-        </div>
-        <!-- Cierre del footer -->
-      </footer>
-      <!-- Cierre del contenedor -->
-    </div>
-    <!-- Cierre de la seccion de contactos -->
-  </section>
 
-  <!-- Enlace CDN de Bootstrap para el JavaScript-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Enlace CDN de jQuery -->
-  <script src="scripts.js"></script>
-  
+            <div class="form-group" style="max-width: 200px;">
+              <label for="personas">Número de personas</label>
+              <i class="fas fa-users"></i>
+              <input type="number" class="form-control" id="personas" name="personas" required readonly>
+            </div>
+
+            <div class="form-group">
+              <label for="comentarios">Comentarios</label>
+              <i class="fas fa-comment"></i>
+              <textarea class="form-control" id="comentarios" name="comentarios" rows="3"></textarea>
+            </div>
+
+            <!-- Mantén los campos ocultos para los servicios seleccionados -->
+            <input type="hidden" id="servicio1" name="servicios" value="0">
+            <input type="hidden" id="servicio2" name="servicios" value="0">
+            <input type="hidden" id="servicio3" name="servicios" value="0">
+            <input type="hidden" id="precio-base-input" name="precio-base" value="50">
+
+            <div class="resumen-container">
+              <h4>Resumen de tu reserva:</h4>
+              <ul id="resumen-reserva">
+                <!-- Se llenará dinámicamente -->
+              </ul>
+              <h4 class="total-resumen">Total: $<span id="total-final">50</span></h4>
+            </div>
+
+            <div class="botones-container">
+              <button class="btn-volver" id="volver-btn">
+                <i class="fas fa-arrow-left"></i> Volver a los servicios
+              </button>
+              <button type="submit" class="btn-cotizar">
+                <i class="fas fa-paper-plane"></i> Cotizar
+              </button>
+            </div>
+          </form>
+
+          <div class="caracteristicas">
+            <div class="caracteristica">
+              <i class="fas fa-check-circle"></i>
+              <span>Confirmación inmediata</span>
+            </div>
+            <div class="caracteristica">
+              <i class="fas fa-lock"></i>
+              <span>Pago seguro</span>
+            </div>
+            <div class="caracteristica">
+              <i class="fas fa-heart"></i>
+              <span>Satisfacción garantizada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creacion de la seccion de contactos/footer -->
+      <section id="Contacto">
+        <!-- Creacion de un contenedor para la informacion del footer-->
+        <div class="container-fluid">
+          <!-- Creacion de un footer con un padding vertical de 5 -->
+          <footer class="py-5">
+            <!-- Creacion de la fila para los elementos-->
+            <div class="row">
+              <!-- Columna izquierda: Logo, nombre y redes sociales -->
+              <div class="col-md-4">
+                <!-- Título para esta sección -->
+                <h5>Nosotros</h5>
+                <!-- Div con el logo y el nombre de la empresa -->
+                <div class="logoYNombre">
+                  <!-- Imagen del logo -->
+                  <img src="Imagenes/Logo.png" alt="Logo de la empresa">
+                  <!-- Imagen del nombre -->
+                  <img src="Imagenes/Nombre.png" alt="Nombre de la empresa">
+                  <!-- Cierre del div -->
+                </div>
+
+                <!-- Creacion de div para los iconos de las redes sociales -->
+                <div class="redes-sociales">
+                  <!-- Parrafo con el texto de seguirnos -->
+                  <p>Síguenos</p>
+                  <!-- Iconos de las redes sociales -->
+                  <div class="social-icons">
+                    <!-- Icono de Facebook -->
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <!-- Icono de Instagram -->
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <!-- Icono de Twitter -->
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <!-- Icono de WhatsApp -->
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <!-- Cierre del div de los iconos -->
+                  </div>
+                  <!-- Cierre del div de las redes sociales -->
+                </div>
+                <!-- Cierre de la columna izquierda -->
+              </div>
+
+              <!-- Columna central: Información de contacto -->
+              <!-- Le damos el tamaño a la columna, ademas de una clase de Bootstrap para centrar el texto -->
+              <div class="col-md-4 text-center">
+                <!-- Titulo para esta seccion -->
+                <h5>Contáctanos</h5>
+                <!-- Lista con la informacion de contacto, estilo de flex en columna, ademasd e una clae-->
+                <ul class="flex-column contact-info">
+                  <!-- Elementos de la lista, margen de fondo de 2 -->
+                  <li class="nav-item mb-2">
+                    <!-- Icono de ubicacion -->
+                    <i class="fas fa-map-marker-alt"></i>
+                    <!-- Texto con la direccion -->
+                    <span>Dirección: Km 3 vía Cúcuta</span>
+                  </li>
+                  <!-- Elementos de la lista, margen de fondo de 2-->
+                  <li class="nav-item mb-2">
+                    <!-- Icono de telefono -->
+                    <i class="fas fa-phone"></i>
+                    <!-- Texto con el telefono -->
+                    <span>Teléfono: 300 987 6543</span>
+                  </li>
+                  <!-- Elementos de la lista, margen de fondo de 2 -->
+                  <li class="nav-item mb-2">
+                    <!-- Icono de correo electronico -->
+                    <i class="fas fa-envelope"></i>
+                    <!-- Texto con el correo electronico -->
+                    <span>Email: MontañaEncantada@gmail.com</span>
+                  </li>
+                  <!-- Elementos de la lista, margen de fondo de 2 -->
+                  <li class="nav-item mb-2">
+                    <!-- Icono de reloj -->
+                    <i class="fas fa-clock"></i>
+                    <!-- Texto con el horario -->
+                    <span>Horario: Lunes a Domingo 8am - 6pm</span>
+                  </li>
+                  <!-- Cierre de la lista -->
+                </ul>
+                <!-- Cierre de la columna central -->
+              </div>
+
+              <!-- Columna derecha: Mapa -->
+              <!-- Le damos el tamaño a la columna -->
+              <div class="col-md-4">
+                <!-- Titulo para esta seccion -->
+                <h5>Nuestra Ubicación</h5>
+                <!-- Contenedor del mapa -->
+                <div class="map-container">
+                  <!-- Mapa de Google Maps -->
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53199.945795559695!2d-73.132978!3d7.11838125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e68157af751c0ed%3A0x75a0e4551148c36c!2sBucaramanga%2C%20Santander!5e1!3m2!1ses-419!2sco!4v1742333859578!5m2!1ses-419!2sco"
+                    width="80%" height="230" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <!-- Cierre del contenedor del mapa -->
+                </div>
+                <!-- Cierre de la columna derecha -->
+              </div>
+              <!-- Cierre de la fila -->
+            </div>
+
+            <!-- Div con la informacion de derechos de autor -->
+            <!-- d-flex: para darle un display flex, le damos estilo de columna, y justifica el contenido con espacio entre ellos
+          da un padding vertical de 4 y un margen vetical de 4 y por ultimo un borde superior -->
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+              <!-- Parrafo con la informacion de derechos de autor -->
+              <p>&copy; 2024 Montaña Encantada. Todos los derechos reservados.</p>
+            </div>
+            <!-- Cierre del footer -->
+          </footer>
+          <!-- Cierre del contenedor -->
+        </div>
+        <!-- Cierre de la seccion de contactos -->
+      </section>
+
+      <!-- Enlace CDN de Bootstrap para el JavaScript-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Enlace CDN de jQuery -->
+      <script src="scripts.js"></script>
+
 </body>
 
 </html>

@@ -1,41 +1,64 @@
-:root {
+:root{
   --color-secundario: #1e521a;
   --color-primario: #ede8d0;
   --color-footer: #002300;
-  --color-form: rgba(255, 255, 255, 0.4);
 }
 
-body,
-html {
-  font-family: "Rubik", "Libre Franklin" !important;
+.carousel-seccion, .conocenos-seccion, .galeria-seccion, .cotizar-seccion {
   background-color: var(--color-primario);
-  color: white;
+  margin: 0; /* Elimina cualquier margen */
+  padding-top: 1px; /* Trick para evitar colapso de márgenes */
+  padding-bottom: 1px; /* Trick para evitar colapso de márgenes */
+}
+
+body, html{
+  font-family: 'Rubik', 'Libre Franklin' !important;
+  background-color: var(--color-primario);
   margin: 0;
   padding: 0;
 }
 
 .carousel-seccion {
-  background-color: var(--color-primario);
   padding: 1px; /* Necesario para contener los márgenes internos */
 }
 
-.titulo {
+.titulo{
   text-align: center;
   font-size: 2rem;
   margin: 1rem;
   padding: 10px;
-  background-color: var(--color-secundario);
+}
+
+.carousel .carousel-control-prev-icon,
+.carousel .carousel-control-next-icon {
+  opacity: 1 !important; /* Fuerza opacidad completa */
+  width: 50px !important; /* Significativamente más grande */
+  height: 50px !important;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5)) !important; /* Añade sombra para más contraste */
+  background-size: 100% !important; /* Asegura que el icono llene el área */
+}
+
+#carouselExampleAutoplaying .carousel-control-prev,
+#carouselExampleAutoplaying .carousel-control-next {
+  opacity: 1 !important; /* Opacidad completa */
+  width: 10% !important; /* Mayor área clickeable */
 }
 
 /*Estilos del Navbar */
 
 .navbar {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--color-secundario);
+  position:absolute;
+  width:100%;
+  top:0;
+  left:0;
+  background: linear-gradient(90deg, 
+  #163d13 0%, /* Más oscuro en el extremo izquierdo */
+  #1e521a 20%, /* Transición hacia el color base */
+  #2a6825 50%, /* Ligeramente más claro en el medio */
+  #1e521a 80%, /* Volviendo al color base */
+  #163d13 100%); /* Más oscuro en el extremo derecho */
 }
+
 
 /* Ajusta el ancho del contenedor de Bootstrap en pantallas grandes */
 @media (min-width: 1200px) {
@@ -46,34 +69,36 @@ html {
 
 @media (min-width: 1600px) {
   .navbar .container {
-    max-width: 85%;
+  max-width: 85%;
   }
 }
 
 @media (min-width: 992px) {
   .navbar-brand {
-    margin-left: 0px;
+  margin-left: 0px;
   }
-
+  
   .navbar-nav {
-    margin-right: 0px;
+  margin-right: 0px;
   }
 }
 
-.navbar .navbar-brand .navbar-logo {
+.navbar .navbar-brand .navbar-logo{
   max-height: 65px;
 }
 
-.navbar .navbar-brand .navbar-titulo {
+.navbar .navbar-brand .navbar-titulo{
   max-height: 50px;
 }
 
-.navbar .nav-link {
-  font-size: 22px;
-  margin-left: 30px;
+
+.navbar .nav-link{
+  font-size:22px;
+  margin-left:30px;
   position: relative;
-  color: white;
+  color:white;
 }
+
 
 /* Quitamos todos los efectos de hover y focus que Bootstrap aplica por defecto a los links de navegación (nav-link).  */
 .navbar .nav-link:hover,
@@ -86,94 +111,99 @@ html {
   opacity: 1 !important; /*Hacemos que la opacidad sea completa.*/
 }
 
-.navbar .nav-link.active {
-  color: white;
+
+.navbar .nav-link.active{
+  color:white;
   font-weight: 600;
 }
 
-.navbar .nav-link::before {
-  content: "";
+.navbar .nav-link::before{
+  content: '';
   position: absolute;
   bottom: -1px;
   left: 0;
   right: 0;
   margin-inline: auto;
-  width: 0%;
+  width:0%;
   height: 2px;
   background-color: white;
   box-shadow: 0px 0px 0px white;
-  transition: all 0.6s ease;
-  transform-origin: center;
+  transition: all .6s ease;
+  transform-origin: center; 
 }
 
-.navbar .nav-item:hover .nav-link::before {
-  width: 80%;
+.navbar .nav-item:hover .nav-link::before{
+  width:80%;
 }
 
-.navbar .navbar-toggler {
-  border: none !important;
+
+
+.navbar .navbar-toggler{
+  border:none !important;
   outline: none !important;
   box-shadow: none !important;
 }
 
-.navbar .toggle-btn {
-  cursor: pointer;
-  position: relative;
-  top: 5px;
-  z-index: 1100;
+.navbar .toggle-btn{
+  cursor:pointer;
+  position:relative;
+  top:5px;
+  z-index:1100;
 }
 
-.navbar .toggle-btn .bar {
-  width: 25px;
+.navbar .toggle-btn .bar{
+  width:25px;
   height: 3px;
   margin: 7px 0 7px auto;
-  transition: all 0.2s ease-in-out;
+  transition: all .2s ease-in-out;
   background-color: white;
 }
 
-.navbar .toggle-btn .bar:nth-child(2) {
-  width: 35px;
+.navbar .toggle-btn .bar:nth-child(2){
+  width:35px;
 }
 
-.navbar #toggle-menu {
+.navbar #toggle-menu{
   display: none;
 }
 
-.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(2) {
+.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(2){
   transform: translateX(50px);
   opacity: 0;
 }
 
-.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(1) {
+.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(1){
   transform: translateY(12px) rotate(45deg);
 }
 
-.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(3) {
+.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(3){
   transform: translateY(-8px) rotate(-45deg);
 }
 
 /*Carrusel*/
 
-.bg-img-1 {
+.bg-img-1{
   background-image: url(Imagenes/cabaña1.jpeg);
+
 }
 
-.bg-img-2 {
+.bg-img-2{
   background-image: url(Imagenes/cabaña2.jpg);
 }
 
-.bg-img-3 {
+.bg-img-3{
   background-image: url(Imagenes/pareja.jpg);
 }
 
-.bg-img-4 {
+.bg-img-4{
   background-image: url(Imagenes/desayuno.jpg);
 }
 
-/* Estilos base */
+
+
 /* Estilos base */
 .carousel-container {
-  width: 95%; /* Ancho proporcional consistente */
+  width: 95%;  /* Ancho proporcional consistente */
   max-width: 1600px; /* Ancho máximo */
   margin: 5vh auto 4vh; /* Márgenes proporcionales a la altura del viewport */
   overflow: hidden;
@@ -182,6 +212,8 @@ html {
   transition: all 0.3s ease-in-out;
 }
 
+
+
 .carousel-image {
   height: 80vh; /* Altura proporcional al viewport */
   background-repeat: no-repeat;
@@ -189,48 +221,87 @@ html {
   background-position: center;
 }
 
+.carousel-caption {
+position: absolute;
+bottom: 10%;
+left: 10%;
+color: white;
+padding: 2rem;
+border-radius: 10px;
+max-width: 80%;
+}
+
+
+/* Estilos para el botón */
+.carousel-caption .btn {
+margin-top: 1rem;
+margin-bottom: 20px;
+padding: 0.5rem 1.5rem;
+font-weight: bold;
+border: 2px solid var(--color-footer) ;
+border-radius: 15px;
+color:var(--color-footer);
+background-color: white;
+transition: transform 0.3s ease;
+/* Personaliza los colores según tu diseño */
+}
+
+.btn-primary:hover{
+background-color: white !important;
+border: 2px solid var(--color-footer) !important;
+color: var(--color-footer) !important;
+transform: scale(1.06); 
+
+}
+
+/* Mejora la legibilidad del texto */
+.carousel-caption h2 {
+font-size: 2.3rem;
+margin-bottom: 1rem;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
 /* Pantallas medianas (tablets) */
 @media (max-width: 992px) {
-  .carousel-container {
-    width: 95%; /* Mantenemos el mismo ancho para conservar los bordes laterales */
-    margin: 4vh auto 3vh;
-    border-radius: 8px;
+  .carousel-container {   
+      width: 95%; /* Mantenemos el mismo ancho para conservar los bordes laterales */
+      margin: 4vh auto 3vh;
+      border-radius: 8px;
   }
-
+  
   .carousel-image {
-    height: 70vh;
+      height: 70vh;
   }
 }
 
 /* Pantallas pequeñas (teléfonos en posición horizontal) */
 @media (max-width: 768px) {
   .carousel-container {
-    width: 95%; /* Mantenemos el mismo ancho */
-    margin: 3vh auto 2vh;
-    border-radius: 5px;
+      width: 95%; /* Mantenemos el mismo ancho */
+      margin: 3vh auto 2vh;
+      border-radius: 5px;
   }
-
+  
   .carousel-image {
-    height: 60vh;
+      height: 60vh;
   }
 }
 
 /* Teléfonos móviles (vista vertical) */
 @media (max-width: 576px) {
   .carousel-container {
-    width: 100%; /* Ancho completo */
-    max-width: none; /* Sin límite de ancho */
-    margin: 0; /* Sin márgenes */
-    border-radius: 0; /* Sin bordes redondeados */
+      width: 100%;    /* Ancho completo */
+      max-width: none; /* Sin límite de ancho */
+      margin: 0;      /* Sin márgenes */
+      border-radius: 0; /* Sin bordes redondeados */
   }
-
+  
   .carousel-image {
-    height: calc(
-      100vh - 56px
-    ); /* Altura completa menos la altura típica del navbar */
-    /* Alternativa: puedes ajustar este valor según la altura real de tu navbar */
+      height: calc(100vh - 56px); /* Altura completa menos la altura típica del navbar */
+      /* Alternativa: puedes ajustar este valor según la altura real de tu navbar */
   }
 }
+
 
 .content-box {
   padding: 40px;
@@ -246,9 +317,7 @@ html {
   align-items: center; /* Alinea verticalmente las columnas */
 }
 
-.caja-conocenos,
-.caja-propietarios,
-.caja-cabaña {
+.caja-conocenos, .caja-propietarios, .caja-cabaña {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -290,9 +359,7 @@ html {
   padding: 15px;
 }
 
-.caja-conocenos:hover,
-.caja-conocenos2:hover,
-.caja-cabaña:hover,
+.caja-cabaña:hover, 
 .caja-propietarios:hover {
   transform: scale(1.03); /* Ejemplo: Aumenta ligeramente el tamaño */
   transition: 0.3s ease-in-out; /* Hace que la transición sea suave */
@@ -302,6 +369,7 @@ html {
 
 /* Contenedor principal para las imágenes */
 .image-container {
+  margin-top:0px;
   position: relative; /* Permite posicionar elementos hijos (como .overlay) de manera absoluta dentro de este contenedor */
   width: 100%; /* El contenedor ocupa todo el ancho disponible */
   height: 300px; /* Altura fija del contenedor */
@@ -368,6 +436,9 @@ html {
   display: block; /* Asegura que el título sea visible como un elemento de bloque */
 }
 
+.descripcion-cotizacion{
+  padding-bottom: 50px;
+}
 /* Tarjeta para cada servicio */
 .servicio-card {
   border: 2px solid #ddd; /* Bordes grises ligeros alrededor de la tarjeta */
@@ -491,6 +562,208 @@ html {
   color: white !important; /* Texto blanco */
 }
 
+/* Estilos para la sección de formulario */
+/* Añade esto a tu CSS para ocultar el formulario inicialmente */
+/* Aseguramos que la sección del formulario esté bien centrada */
+.formulario-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-image: url("Imagenes/SeccionCotizar/Fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Estas propiedades centran el contenido horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* La clase para ocultar/mostrar */
+.formulario-section.hidden {
+  display: none;
+}
+
+/* Asegurar que el contenedor del formulario esté centrado y tenga el ancho correcto */
+.formulario-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 30px 40px;
+  max-width: 800px;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto; /* Esto ayuda al centrado */
+}
+
+.formulario-titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.formulario-subtitulo {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group i {
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  color: #777;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+  outline: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.resumen-container {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.resumen-container h4 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.total-resumen {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+.botones-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-volver {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.btn-volver i {
+  margin-right: 8px;
+}
+
+.btn-cotizar {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.btn-cotizar i {
+  margin-right: 8px;
+}
+
+.btn-volver:hover, .btn-cotizar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.caracteristicas {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.caracteristica {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.caracteristica i {
+  margin-right: 8px;
+  color: #4CAF50;
+}
+
+/* Estilos para la lista de resumen */
+#resumen-reserva {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#resumen-reserva li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+#resumen-reserva li:last-child {
+  border-bottom: none;
+}
+
 /* Oculta el formulario cuando tiene la clase .hidden */
 .formulario-section.hidden {
   display: none; /* Hace que el formulario sea invisible */
@@ -579,6 +852,10 @@ html {
   font-size: 30px; /* Tamaño grande para visibilidad */
 }
 
+span{
+  margin-left:10px; /*Se le pone un margen a la izquierda de 10 px a los elementos marcados con "span", en este caso, los iconos de la parte de "contactanos"*/
+}
+
 /* Cambio de color al pasar el mouse sobre los íconos */
 .social-icon:hover {
   color: white; /* Cambia a blanco al hacer hover */
@@ -598,6 +875,7 @@ html {
   margin-bottom: 10px; /* Espaciado inferior entre elementos */
   text-align: center; /* Centra el texto dentro de cada elemento */
 }
+
 
 /* Contenedor para el mapa */
 .map-container {
