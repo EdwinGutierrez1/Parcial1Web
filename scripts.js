@@ -1,12 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Selecciona el logo de la barra de navegación
+
+//Script para remplazar el logo del navbar, por un logo alternativo cuando el usuario pasa el mouse encima de este.
+
+document.addEventListener('DOMContentLoaded', function() { /*Se asegura de que el código dentro solo se ejecute cuando todo el HTML haya cargado completamente.*/
+
+    // Selecciona el logo de la barra de navegación. Busca el primer elemento con la clase navbar-logo.
+
     const navbarLogo = document.querySelector('.navbar-logo');
     
-    if (navbarLogo) {
+    if (navbarLogo) { //Si navbarLogo no es null
+
         // Guarda la fuente original del logo
         const originalSrc = navbarLogo.src;
+
         // Define la fuente del logo alternativo para el hover
         const hoverSrc = 'Imagenes/LogoAlternativo.png'; 
+        
         // Obtiene el elemento padre del logo
         const brandElement = navbarLogo.parentElement;
 
@@ -23,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
 
 // Creamos el evento para el botón de cotizar
 document.addEventListener('DOMContentLoaded', function() {

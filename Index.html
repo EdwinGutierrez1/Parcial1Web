@@ -1,58 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la página para que sea responsiva en dispositivos móviles -->
+  <link rel="stylesheet" href="styles.css"> <!--Se vincula el archivo html con la hoja de estilos css.-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  <!-- Importamos la librería FontAwesome desde un CDN para usar iconos en la página --> 
+  
 
-  <!-- Se vincula la fuente "Rubik" y "Libre Franklin" desde el servicio Google Fonts"-->
+  <!-- Se "Importan" las fuentes "Libre Franklin" y "Rubik" desde Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+  rel="stylesheet">
 
-  <!-- Enlace CDN de Bootstrap para el css-->
+  <!--Se importa Bootstrap desde un CDN para usar sus estilos predefinidos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
+  <!-- Se establece el icono de la pestaña del navegador para la página-->
   <link rel="icon" href="Imagenes/logoAlternativo.png">
 
-  <title>Montaña Encantada | Home</title>
-
+  <title>Montaña Encantada | Home</title> <!--Titulo de la página web-->
 </head>
 
 <body>
 
-  <!-- NavBar -->
-  <section>
-    <nav class="navbar navbar-expand-lg" id="secccionavbar">
-      <div class="container">
+  <!-- NAVBAR -->
 
-        <a class="navbar-brand" href="#secccionavbar">
-          <img src="Imagenes/Logo.png" alt="Logo" class="navbar-logo">
-          <img src="Imagenes/Nombre.png" alt="Título" class="navbar-titulo">
+  <!--Se crea la sección para el navbar-->
+  <section>
+    <nav class="navbar navbar-expand-lg" id="secccionavbar"> <!-- Se usan las clases definidas por bootstrap para crear el navbar-->
+      <div class="container"> <!-- Contenedor que agrupa los elementos del navbar -->
+
+        <a class="navbar-brand" href="#secccionavbar"> <!-- Enlace a la misma sección del navbar -->
+          <img src="Imagenes/Logo.png" alt="Logo" class="navbar-logo"> <!-- Imagen del logo principal -->
+          <img src="Imagenes/Nombre.png" alt="Título" class="navbar-titulo"> <!-- Imagen del nombre de la página -->
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
+          <!-- Botón para colapsar y expandir el menú en dispositivos pequeños -->
 
-          <input type="checkbox" name="toggle-menu" id="toggle-menu">
-          <label for="toggle-menu" type="button" class="toggle-btn">
-            <div class="bar"></div>
+          <input type="checkbox" name="toggle-menu" id="toggle-menu">  <!-- Checkbox oculto para controlar la animación del menú -->
+          <label for="toggle-menu" type="button" class="toggle-btn"> <!-- Etiqueta que actúa como botón del menú hamburguesa -->
+            <div class="bar"></div>  <!-- Se crean 3 divs, que son las barras que forman el icono del menú hamburguesa-->
             <div class="bar"></div>
             <div class="bar"></div>
           </label>
 
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- Contenedor que colapsa el menú en dispositivos pequeños -->
 
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!-- Lista de enlaces de navegación alineados a la derecha-->
+            <!-- Esta tiene ciertas propiedades ya definidas por bootstrap -->
+
             <!--Link Inicio -->
-            <li class="nav-item">
+            <li class="nav-item"> <!--Esta clase se usa para items de navegación y está definida por bootstrap-->
               <a class="nav-link" href="#secccionavbar">Inicio</a>
             </li>
+
             <!--Link Conocenos -->
             <li class="nav-item">
               <a class="nav-link" href="#conocenos">Conócenos</a>
@@ -75,117 +81,155 @@
       </div>
     </nav>
   </section>
-  <!-- Enlace CDN de Bootstrap para el JavaScript-->
 
 
-  <!--Carrusel -->
+<!--CARRUSEL-->
 
-  <section class="carousel-seccion">
-    <div class="carousel-container">
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+<!-- Sección que contiene el carrusel de imágenes -->
+<section class="carousel-seccion">
 
-        <div class="carousel-inner">
+  <!-- Contenedor principal del carrusel -->
+  <div class="carousel-container">
 
-          <div class="carousel-item carousel-image bg-img-1 active">
-            <div class="carousel-caption">
-              <h2>Bienvenidos a Montaña Encantada, un refugio de paz y naturaleza</h2>
-              <a href="#Cotizar">
-                <button class="btn btn-primary">Reservar ahora</button>
-              </a>
-            </div>
+    <!-- Carrusel de Bootstrap con autoplay activado (data-bs-ride). -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"> <!-- Se usa false, para que el autoplay no se detenga cuando
+      el usuario pasa el mouse encima de las imagenes -->
+
+      <!-- Contenedor de los elementos del carrusel -->
+      <div class="carousel-inner">
+
+        <!-- Primer elemento del carrusel (activo por defecto) -->
+        <!-- Cada elemento del carrusel tiene además de la imagen, un título, y un botón que lleva a la sección de cotizar-->
+      
+        <div class="carousel-item carousel-image bg-img-1 active">
+          <div class="carousel-caption">
+            <h2>Bienvenidos a Montaña Encantada, un refugio de paz y naturaleza</h2>
+            <a href="#Cotizar">
+              <button class="btn btn-primary">Reservar ahora</button>
+            </a>
           </div>
-
-          <div class="carousel-item carousel-image bg-img-2">
-            <div class="carousel-caption">
-              <h2>Disfruta de habitaciones elegantes y cómodas en pleno corazón del bosque</h2>
-              <a href="#Cotizar">
-                <button class="btn btn-primary">Reservar ahora</button>
-              </a>
-            </div>
-          </div>
-
-          <div class="carousel-item carousel-image bg-img-3">
-            <div class="carousel-caption">
-              <h2>Escapa de la rutina y vive momentos inolvidables con tu pareja en un entorno único</h2>
-              <a href="#Cotizar">
-                <button class="btn btn-primary">Reservar ahora</button>
-              </a>
-            </div>
-          </div>
-
-          <div class="carousel-item carousel-image bg-img-4">
-            <div class="carousel-caption">
-              <h2>Comienza tu día con un desayuno gourmet rodeado de la serenidad de la naturaleza</h2>
-              <a href="#Cotizar">
-                <button class="btn btn-primary">Reservar ahora</button>
-              </a>
-            </div>
-          </div>
-
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
+        <!-- Segundo elemento del carrusel -->
+        <div class="carousel-item carousel-image bg-img-2">
+          <div class="carousel-caption">
+            <h2>Disfruta de habitaciones elegantes y cómodas en pleno corazón del bosque</h2>
+            <a href="#Cotizar">
+              <button class="btn btn-primary">Reservar ahora</button>
+            </a>
+          </div>
+        </div>
 
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+        <!-- Tercer elemento del carrusel -->
+        <div class="carousel-item carousel-image bg-img-3">
+          <div class="carousel-caption">
+            <h2>Escapa de la rutina y vive momentos inolvidables con tu pareja en un entorno único</h2>
+            <a href="#Cotizar">
+              <button class="btn btn-primary">Reservar ahora</button>
+            </a>
+          </div>
+        </div>
 
-        </button>
+        <!-- Cuarto elemento del carrusel -->
+        <div class="carousel-item carousel-image bg-img-4">
+          <div class="carousel-caption">
+            <h2>Comienza tu día con un desayuno gourmet rodeado de la serenidad de la naturaleza</h2>
+            <a href="#Cotizar">
+              <button class="btn btn-primary">Reservar ahora</button>
+            </a>
+          </div>
+        </div>
+
+      </div> <!-- Fin de carousel-inner -->
+
+      <!-- Botón para retroceder en el carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <!-- Botón para avanzar en el carrusel -->
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div> <!-- Fin de carousel -->
+
+  </div> <!-- Fin de carousel-container -->
+
+</section> <!-- Fin de la sección del carrusel -->
+
+
+
+<!-- CONOCENOS -->
+
+<!-- Sección "Conócenos"-->
+<section class="conocenos-seccion" id="conocenos">
+
+  <!-- Contenedor principal que mantiene el contenido centrado y con márgenes adecuados -->
+  <div class="container">
+
+    <!-- Primera fila -->
+    <div class="row align-items-center"> <!-- Alinea los elementos verticalmente en el centro -->
+      
+      <!-- Columna izquierda con texto -->
+      <div class="col-md-6"> <!-- Columna que ocupa 6 de las 12 columnas disponibles según el grid system de bootstrap-->
+        <div class="content-box caja-conocenos">
+          <h2 class="titulo-conocenos">¡Conócenos!</h2>
+          <p class="descripcion-conocenos">
+            Todo comenzó con un sueño. Laura y Andrés, una pareja amante de la naturaleza y los viajes,
+            querían escapar del ajetreo de la ciudad y encontrar un lugar de paz. Durante una escapada a las
+            montañas,
+            entre fogatas y cielos estrellados, nació la idea de crear Montaña Encantada, un refugio en la cima de
+            una montaña
+            donde cualquiera pudiera desconectarse del estrés sin renunciar a la comodidad.
+          </p>
+        </div>
       </div>
+
+      <!-- Columna derecha con imagen de los propietarios -->
+      <div class="col-md-6 caja-propietarios">
+        <div class="content-box">
+          <img src="Imagenes/propietarios.png" alt="Propietarios de Montaña Encantada">
+        </div>
+      </div>
+      
     </div>
-  </section>
 
-
-  <section class="conocenos-seccion" id="conocenos">
-    <div class="container">
-      <!-- Primera fila -->
-      <div class="row align-items-center"> <!-- Agregado para alinear verticalmente -->
-        <div class="col-md-6">
-          <div class="content-box caja-conocenos">
-            <h2 class="titulo-conocenos">¡Conócenos!</h2>
-            <p class="descripcion-conocenos">
-              Todo comenzó con un sueño. Laura y Andrés, una pareja amante de la naturaleza y los viajes,
-              querían escapar del ajetreo de la ciudad y encontrar un lugar de paz. Durante una escapada a las
-              montañas,
-              entre fogatas y cielos estrellados, nació la idea de crear Montaña Encantada, un refugio en la cima de
-              una montaña
-              donde cualquiera pudiera desconectarse del estrés sin renunciar a la comodidad.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-6 caja-propietarios">
-          <div class="content-box">
-            <img src="Imagenes/propietarios.png" alt="Propietarios de Montaña Encantada">
-          </div>
+    <!-- Segunda fila -->
+    <div class="row">
+      
+      <!-- Columna izquierda con imagen de la cabaña -->
+      <div class="col-md-6">
+        <div class="content-box caja-cabaña">
+          <img src="Imagenes/cabaña3.jpg" alt="Cabaña del glamping">
         </div>
       </div>
 
-      <!-- Segunda fila -->
-      <div class="row">
-        <div class="col-md-6">
-          <div class="content-box caja-cabaña">
-            <img src="Imagenes/cabaña3.jpg" alt="Cabaña del glamping">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="content-box caja-conocenos2">
-            <p class="descripcion-2">
-              Hoy, ese sueño es una realidad. Montaña Encantada ofrece alojamientos acogedores, vistas espectaculares
-              y un ambiente de calma absoluta. Ya sea para relajarte, explorar senderos o simplemente disfrutar de la
-              naturaleza,
-              este es el lugar perfecto para escapar. ¿Listo para la experiencia?
-            </p>
-          </div>
+      <!-- Columna derecha con más información sobre el glamping -->
+      <div class="col-md-6">
+        <div class="content-box caja-conocenos2">
+          <p class="descripcion-2">
+            Hoy, ese sueño es una realidad. Montaña Encantada ofrece alojamientos acogedores, vistas espectaculares
+            y un ambiente de calma absoluta. Ya sea para relajarte, explorar senderos o simplemente disfrutar de la
+            naturaleza,
+            este es el lugar perfecto para escapar. ¿Listo para la experiencia?
+          </p>
         </div>
       </div>
+      
     </div>
-  </section>
+
+  </div>
+</section>
+
+
+
+
+  <!-- GALERIA -->
 
   <!-- Sección principal de la galería -->
   <section id="Galeria" class="galeria-seccion">
