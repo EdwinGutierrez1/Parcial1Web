@@ -1,31 +1,37 @@
+/*Se definen variables CSS para los colores principales */
 :root{
-  --color-secundario: #1e521a;
-  --color-primario: #ede8d0;
-  --color-footer: #002300;
+  --color-secundario: #1e521a; /* Color verde oscuro usado como color secundario */
+  --color-primario: #ede8d0; /* Color beige claro usado como color principal */
+  --color-tercero: #002300; /* Color verde muy oscuro */
 }
 
+/* Estilos generales para secciones específicas */
 .carousel-seccion, .conocenos-seccion, .galeria-seccion, .cotizar-seccion {
-  background-color: var(--color-primario); /*Color de fondo*/
-  margin: 0; /* Elimina cualquier margen */
-  padding-top: 1px; /*1 pixel de padding arriba y abajo para evitar colapso de márgenes */
-  padding-bottom: 1px; 
+  background-color: var(--color-primario); /* Se establece el color de fondo definido como primario */
+  margin: 0; /*Se eliminan los márgenes para evitar espacios innecesarios */
+  padding-top: 1px; /* Se agrega un pequeño padding en la parte superior */
+  padding-bottom: 1px; /* Se agrega un pequeño padding en la parte inferior */
 }
+
+/* Estilos para el body y todo el documento HTML en general */
 
 body, html{
-  font-family: 'Rubik', 'Libre Franklin' !important;
-  background-color: var(--color-primario);
-  margin: 0;
-  padding: 0;
+  font-family: 'Rubik', 'Libre Franklin' !important; /* Se establecen fuentes específicas para el texto */
+  background-color: var(--color-primario); /* Se mantiene el color de fondo general */
+  margin: 0; /* Se eliminan los márgenes predeterminados del navegador */
+  padding: 0; /* Se eliminan los paddings predeterminados del navegador */
 }
 
 
-/*Estilos del Navbar */
+/* ---------- Estilos del Navbar -------------- */
 
+
+/* Define el estilo del Navbar */
 .navbar {
-  position:absolute;
-  width:100%;
-  top:0;
-  left:0;
+  position: absolute; /* Posiciona el Navbar de manera absoluta en la página */
+  width: 100%; /* Hace que el Navbar ocupe todo el ancho */
+  top: 0; /*Se fija en la parte superior */
+  left: 0; /* Alineado a la izquierda */
   background: linear-gradient(90deg, 
   #163d13 0%, /* Más oscuro en el extremo izquierdo */
   #1e521a 20%, /* Transición hacia el color base */
@@ -34,248 +40,277 @@ body, html{
   #163d13 100%); /* Más oscuro en el extremo derecho */
 }
 
+/* Ajustes de ancho del contenedor en pantallas grandes */
 
-/* Ajusta el ancho del contenedor de Bootstrap en pantallas grandes */
+/* En pantallas de al menos 1200px de ancho, ajusta el tamaño máximo del contenedor */
 @media (min-width: 1200px) {
   .navbar .container {
-    max-width: 90%; /* En lugar del valor predeterminado de Bootstrap */
+    max-width: 90%; /* Reduce el ancho predeterminado de Bootstrap */
   }
 }
 
+/* En pantallas de al menos 1600px, reduce aún más el ancho del contenedor */
 @media (min-width: 1600px) {
   .navbar .container {
-  max-width: 85%;
+    max-width: 85%;
   }
 }
+
+/* Ajustes de márgenes en pantallas medianas (992px en adelante) */
 
 @media (min-width: 992px) {
   .navbar-brand {
-  margin-left: 0px;
+    margin-left: 0px; /* Ajusta la marca del Navbar */
   }
   
   .navbar-nav {
-  margin-right: 0px;
+    margin-right: 0px; /* Ajusta los elementos de navegación */
   }
 }
 
-.navbar .navbar-brand .navbar-logo{
-  max-height: 65px;
+/*  Ajustes de logo y título del Navbar */
+
+.navbar .navbar-brand .navbar-logo {
+  max-height: 65px; /* Define el tamaño máximo del logo */
 }
 
-.navbar .navbar-brand .navbar-titulo{
-  max-height: 50px;
+.navbar .navbar-brand .navbar-titulo {
+  max-height: 50px; /* Define el tamaño máximo del título */
 }
 
+/* Estilos de los enlaces de navegación */
 
-.navbar .nav-link{
-  font-size:22px;
-  margin-left:30px;
-  position: relative;
-  color:white;
+.navbar .nav-link {
+  font-size: 22px; /*tamaño de fuente */
+  margin-left: 30px; /* Espaciado entre enlaces */
+  position: relative; /* Necesario para los efectos de hover */
+  color: white; /* Color de los enlaces */
 }
 
-
-/* Quitamos todos los efectos de hover y focus que Bootstrap aplica por defecto a los links de navegación (nav-link).  */
+/* Eliminamos los efectos de hover y focus de Bootstrap */
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-  color: white !important; /*Al pasar el cursor, el color debe seguir siendo blanco*/
-  background-color: transparent !important; /*Se Elimina cualquier fondo */
-  box-shadow: none !important; /*Se eliminan las sombras */
-  outline: none !important; /*Se eliminan los contornos*/
-  text-decoration: none !important; /*Quitamos el subrayado del texto*/
-  opacity: 1 !important; /*Hacemos que la opacidad sea completa.*/
+  color: white !important; /* Mantiene el color en hover */
+  background-color: transparent !important; /* Evitamos cambios de fondo */
+  box-shadow: none !important; /* Eliminamos cualquier sombra */
+  outline: none !important; /* Eliminamos contornos */
+  text-decoration: none !important; /* Eliminamos el subrayado */
+  opacity: 1 !important; /* Mantiene la opacidad al 100% */
 }
 
-
-.navbar .nav-link.active{
-  color:white;
-  font-weight: 600;
+/* Estilos para el enlace activo */
+.navbar .nav-link.active {
+  color: white; /* Mantiene el color blanco */
+  font-weight: 600; /* Hace el texto más grueso */
 }
 
-.navbar .nav-link::before{
-  content: '';
+/* Efecto de subrayado en los enlaces al pasar el mouse */
+
+.navbar .nav-link::before {
+  content: ''; /* Crea un pseudo-elemento para el subrayado */
   position: absolute;
-  bottom: -1px;
+  bottom: -1px; /* Lo posiciona justo debajo del enlace */
   left: 0;
   right: 0;
-  margin-inline: auto;
-  width:0%;
-  height: 2px;
-  background-color: white;
-  box-shadow: 0px 0px 0px white;
-  transition: all .6s ease;
-  transform-origin: center; 
+  margin-inline: auto; /* Centra la línea */
+  width: 0%; /* Inicialmente sin ancho */
+  height: 2px; /* Define el grosor */
+  background-color: white; /* Color del subrayado */
+  transition: all .6s ease; /* Agrega una animación suave */
+  transform-origin: center;
 }
 
-.navbar .nav-item:hover .nav-link::before{
-  width:80%;
+/* Expande la línea al hacer hover */
+.navbar .nav-item:hover .nav-link::before {
+  width: 80%; /* Expande la línea hasta el 80% del enlace */
 }
 
-.navbar .navbar-toggler{
-  border:none !important;
-  outline: none !important;
-  box-shadow: none !important;
+/* Estilos del botón de menú (modo responsive)*/
+
+.navbar .navbar-toggler {
+  border: none !important; /* Elimina el borde del botón */
+  outline: none !important; /* Evita contornos en focus */
+  box-shadow: none !important; /* Elimina cualquier sombra */
 }
 
-.navbar .toggle-btn{
-  cursor:pointer;
-  position:relative;
-  top:5px;
-  z-index:1100;
+/* Botón de menú hamburguesa */
+.navbar .toggle-btn {
+  cursor: pointer; /* Hace que el cursor cambie a "clickeable" */
+  position: relative;
+  top: 5px; /* Ajusta la posición */
+  z-index: 1100; /* Se asegura de que esté por encima de otros elementos */
 }
 
-.navbar .toggle-btn .bar{
-  width:25px;
+/* Líneas del icono de menú */
+.navbar .toggle-btn .bar {
+  width: 25px;
   height: 3px;
-  margin: 7px 0 7px auto;
-  transition: all .2s ease-in-out;
-  background-color: white;
+  margin: 7px 0 7px auto; /* Se alinea a la derecha */
+  transition: all .2s ease-in-out; /* Agrega una transición suave */
+  background-color: white; /* Color de las líneas */
 }
 
-.navbar .toggle-btn .bar:nth-child(2){
-  width:35px;
+/* La segunda barra es más larga */
+.navbar .toggle-btn .bar:nth-child(2) {
+  width: 35px;
 }
 
-.navbar #toggle-menu{
+/*
+   Animación del botón de menú al hacer clic */
+
+/* Oculta el input de tipo checkbox */
+.navbar #toggle-menu {
   display: none;
 }
 
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(2){
-  transform: translateX(50px);
-  opacity: 0;
+/* Cuando el checkbox está marcado, la segunda barra desaparece */
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(2) {
+  transform: translateX(50px); /* La mueve fuera de la vista */
+  opacity: 0; /* La oculta completamente */
 }
 
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(1){
-  transform: translateY(12px) rotate(45deg);
+/* Convierte la primera barra en una diagonal hacia abajo */
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(1) {
+  transform: translateY(12px) rotate(45deg); /*Se rota 45° en sentido horario*/
 }
 
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(3){
-  transform: translateY(-8px) rotate(-45deg);
+/* Convierte la tercera barra en una diagonal hacia arriba */
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); /*Se rota 45° en sentido anti-horario*/
 }
 
 
-/*Estilos del  Carrusel */
+/* ---------- Estilos del Carrusel ------------- */
+
+/* Contenedor de la sección del carrusel */
 .carousel-seccion {
-  padding: 1px; /* Necesario para contener los márgenes internos */
+  padding: 1px; /* Se usa para evitar que los márgenes internos afecten el diseño */
 }
 
-.titulo{
-  text-align: center;
-  font-size: 2rem;
+/* Estilo del título del carrusel */
+.titulo {
+  text-align: center; /* Centra el texto */
+  font-size: 2rem; /* Tamaño de fuente grande*/
   margin: 1rem;
   padding: 10px;
 }
 
+/* ---------- Controles del Carrusel ------------- */
+
+/* Estilos de los iconos de navegación del carrusel */
 .carousel .carousel-control-prev-icon,
 .carousel .carousel-control-next-icon {
-  opacity: 1 !important; /* Fuerza opacidad completa */
-  width: 50px !important; /* Significativamente más grande */
+  opacity: 1 !important; /* Asegura que sean completamente visibles */
+  width: 50px !important; /* Aumenta el tamaño para mejor visibilidad */
   height: 50px !important;
-  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5)) !important; /* Añade sombra para más contraste */
-  background-size: 100% !important; /* Asegura que el icono llene el área */
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5)) !important; /* Agrega sombra para resaltar */
+  background-size: 100% !important; /* Asegura que la imagen del ícono llene su área */
 }
 
+/* Ajustes para la navegación del carrusel específico */
 #carouselExampleAutoplaying .carousel-control-prev,
 #carouselExampleAutoplaying .carousel-control-next {
-  opacity: 1 !important; /* Opacidad completa */
-  width: 10% !important; /* Mayor área clickeable */
+  opacity: 1 !important; /* Hace los controles completamente visibles */
+  width: 10% !important; /* Amplía el área clickeable para facilitar la navegación */
 }
 
-.bg-img-1{
+/* ----- Fondos de Imágenes -----*/
+
+/* Se asignan imágenes de fondo a diferentes diapositivas del carrusel */
+.bg-img-1 {
   background-image: url(Imagenes/cabaña1.jpeg);
-
 }
 
-.bg-img-2{
+.bg-img-2 {
   background-image: url(Imagenes/cabaña2.jpg);
 }
 
-.bg-img-3{
+.bg-img-3 {
   background-image: url(Imagenes/pareja.jpg);
 }
 
-.bg-img-4{
+.bg-img-4 {
   background-image: url(Imagenes/desayuno.jpg);
 }
 
+/* ---------- Contenedor principal del Carrusel ------------- */
 
-
-/* Estilos base */
 .carousel-container {
-  width: 95%;  /* Ancho proporcional consistente */
-  max-width: 1600px; /* Ancho máximo */
-  margin: 5vh auto 4vh; /* Márgenes proporcionales a la altura del viewport */
-  overflow: hidden;
-  border-radius: 10px;
-  /* Transición suave cuando cambian los tamaños */
-  transition: all 0.3s ease-in-out;
+  width: 95%;  /* Se mantiene un ancho proporcional */
+  max-width: 1600px; /* Define un límite de tamaño */
+  margin: 5vh auto 4vh; /* Centrado con márgenes proporcionales */
+  overflow: hidden; /*se usa para ocultar cualquier contenido que exceda los límites del contenedor. */
+  border-radius: 10px; /* Bordes redondeados */
+  transition: all 0.3s ease-in-out; /* Suaviza cambios de tamaño */
 }
 
-
-
+/* ---------- Imagenes del Carrusel ------------- */
 .carousel-image {
-  height: 80vh; /* Altura proporcional al viewport */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  height: 80vh; /* Altura basada en el viewport */
+  background-repeat: no-repeat; /*Si la imagen es más pequeña que el contenedor, no se replicará para llenar el espacio vacío.*/
+  background-size: cover; /* la imagen de fondo para cubrir completamente el área del contenedor.*/
+  background-position: center; /*Centra la imagen dentro del contenedor.*/
 }
 
+/* ---------- Estilos del texto y botón ------------- */
+
+/* Posición del texto dentro del carrusel */
 .carousel-caption {
-position: absolute;
-bottom: 10%;
-left: 10%;
-color: white;
-padding: 2rem;
-border-radius: 10px;
-max-width: 80%;
+  position: absolute; /*Por encima de otros elemenetos */
+  bottom: 10%; /* Ubicación en la parte inferior */
+  left: 10%; /* Separación desde la izquierda */
+  color: white; /* Color del texto */
+  padding: 2rem;
+  max-width: 80%; /* Evita que el texto ocupe demasiado espacio */
 }
 
-
-/* Estilos para el botón */
+/* Estilos del botón dentro del carrusel */
 .carousel-caption .btn {
-margin-top: 1rem;
-margin-bottom: 20px;
-padding: 0.5rem 1.5rem;
-font-weight: bold;
-border: 2px solid var(--color-footer) ;
-border-radius: 15px;
-color:var(--color-footer);
-background-color: white;
-transition: transform 0.3s ease;
-/* Personaliza los colores según tu diseño */
+  margin-top: 1rem;
+  margin-bottom: 20px;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  border: 2px solid var(--color-tercero);
+  border-radius: 15px;
+  color: var(--color-tercero);
+  background-color: white;
+  transition: transform 0.3s ease; /*ease: Tipo de aceleración de la animación.*/
 }
 
-.btn-primary:hover{
-background-color: white !important;
-border: 2px solid var(--color-footer) !important;
-color: var(--color-footer) !important;
-transform: scale(1.06); 
+/* Efecto al pasar el cursor sobre el botón */
+.btn-primary:hover {
+  background-color: white !important;
+  border: 2px solid var(--color-tercero) !important;
+  color: var(--color-tercero) !important;
+  transform: scale(1.06); /* Aumenta ligeramente el tamaño */
 }
 
-/* Mejora la legibilidad del texto */
+/* Tamaño del título dentro del carrusel */
 .carousel-caption h2 {
-font-size: 2.3rem;
-margin-bottom: 1rem;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Agrega sombra para mejorar la legibilidad */
 }
 
-/* Pantallas medianas (tablets) */
+/*Ajustes Responsivos*/
+
+/* Para pantallas medianas (tablets) */
 @media (max-width: 992px) {
   .carousel-container {   
-      width: 95%; /* Mantenemos el mismo ancho para conservar los bordes laterales */
+      width: 95%;
       margin: 4vh auto 3vh;
       border-radius: 8px;
   }
   
   .carousel-image {
-      height: 70vh;
+      height: 70vh; /* Reduce la altura del carrusel */
   }
 }
 
-/* Pantallas pequeñas (teléfonos en posición horizontal) */
+/* Para pantallas pequeñas (teléfonos en posición horizontal) */
 @media (max-width: 768px) {
   .carousel-container {
-      width: 95%; /* Mantenemos el mismo ancho */
+      width: 95%;
       margin: 3vh auto 2vh;
       border-radius: 5px;
   }
@@ -285,83 +320,95 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
   }
 }
 
-/* Teléfonos móviles (vista vertical) */
+/* Para teléfonos en vista vertical */
 @media (max-width: 576px) {
   .carousel-container {
-      width: 100%;    /* Ancho completo */
-      max-width: none; /* Sin límite de ancho */
-      margin: 0;      /* Sin márgenes */
+      width: 100%; /* Usa todo el ancho */
+      max-width: none;
+      margin: 0; /* Elimina márgenes */
       border-radius: 0; /* Sin bordes redondeados */
   }
   
   .carousel-image {
-      height: calc(100vh - 56px); /* Altura completa menos la altura típica del navbar */
-      /* Alternativa: puedes ajustar este valor según la altura real de tu navbar */
+      height: calc(100vh - 56px); /* Usa toda la pantalla menos el navbar */
   }
 }
 
 
+/*--------- Estilos de la sección Conócenos --------------*/
+
+/* Contenedor principal de la sección */
 .content-box {
-  padding: 40px;
-  border-radius: 15px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  padding: 40px; /* Espaciado interno de 40px */
+  border-radius: 15px; /* Esquinas redondeadas de 15px */
+  height: 100%; /* Ocupa toda la altura disponible */
+  display: flex; /* Usa Flexbox para organizar el contenido */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  overflow: hidden; /* Oculta el contenido que se desborde del contenedor */
 }
 
+/* Alineación de las filas en la sección */
 .row {
-  align-items: center; /* Alinea verticalmente las columnas */
+  align-items: center; /* Alinea verticalmente las columnas dentro de la fila */
 }
 
+/* Estilos para las cajas de contenido dentro de la sección */
 .caja-conocenos, .caja-propietarios, .caja-cabaña {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 100%; /* Ocupa toda la altura disponible */
+  display: flex; /* Usa Flexbox para organizar el contenido */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  justify-content: center; /* Centra los elementos dentro de la caja */
 }
 
+/* Estilos para las imágenes dentro de las cajas */
 .caja-propietarios img,
 .caja-cabaña img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  object-fit: cover;
+  width: 100%; /* La imagen se ajusta al ancho del contenedor */
+  height: auto; /* Mantiene la proporción original de la imagen */
+  border-radius: 15px; /* Esquinas redondeadas para las imágenes */
+  object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor sin deformarse */
 }
 
+/* Estilos generales de la sección "Conócenos" */
 .conocenos-seccion {
-  padding: 80px 0;
+  padding: 80px 0; /* Espaciado superior e inferior de 80px */
 }
 
+/* Estilos para el título de la sección */
 .titulo-conocenos {
-  font-size: 50px;
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: -30px;
+  font-size: 50px; /* Tamaño de fuente grande para el título */
+  text-align: center; /* Centra el texto */
+  margin-bottom: 30px; /* Espaciado inferior de 30px */
+  margin-top: -30px; /* Ajusta la posición hacia arriba */
 }
 
+/* Estilos para la descripción de la sección */
 .descripcion-conocenos {
-  text-align: justify;
-  font-size: 22px;
-  width: 100%;
-  max-width: 100%;
-  padding: 15px;
+  text-align: justify; /* Justifica el texto */
+  font-size: 22px; /* Tamaño de fuente*/
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 100%; /* Evita que el contenido se expanda más allá del contenedor */
+  padding: 15px; /* Espaciado interno */
 }
 
+/*descripción 2 con un tamaño de fuente mayor */
 .descripcion-2 {
-  text-align: justify;
-  font-size: 25px;
-  width: 100%;
-  max-width: 100%;
-  padding: 15px;
+  text-align: justify; /* Justifica el texto */
+  font-size: 25px; /* Tamaño de fuente ligeramente más grande */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 100%; /* Evita que el contenido se expanda más allá del contenedor */
+  padding: 15px; /* Espaciado interno */
 }
 
+/* Efecto hover para resaltar las cajas de propietarios y cabañas */
 .caja-cabaña:hover, 
 .caja-propietarios:hover {
-  transform: scale(1.03); /* Ejemplo: Aumenta ligeramente el tamaño */
-  transition: 0.3s ease-in-out; /* Hace que la transición sea suave */
+  transform: scale(1.03); /* Aumenta ligeramente el tamaño al pasar el mouse */
+  transition: 0.3s ease-in-out; /* Hace que la transición sea suave y fluida */
 }
+
+
 
 /* ESTILOS GALERIA */
 
